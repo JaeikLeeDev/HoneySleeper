@@ -53,6 +53,8 @@ LTDC_HandleTypeDef hltdc;
 
 OSPI_HandleTypeDef hospi1;
 
+TIM_HandleTypeDef htim5;
+
 /* Definitions for defaultTask */
 osThreadId_t defaultTaskHandle;
 const osThreadAttr_t defaultTask_attributes = {
@@ -80,6 +82,7 @@ static void MX_DMA2D_Init(void);
 static void MX_LTDC_Init(void);
 static void MX_I2C4_Init(void);
 static void MX_OCTOSPI1_Init(void);
+static void MX_TIM5_Init(void);
 void StartDefaultTask(void *argument);
 extern void TouchGFX_Task(void *argument);
 
@@ -134,9 +137,23 @@ int main(void)
   MX_LTDC_Init();
   MX_I2C4_Init();
   MX_OCTOSPI1_Init();
+  MX_TIM5_Init();
   MX_TouchGFX_Init();
   /* USER CODE BEGIN 2 */
-
+//    HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_1); // Add PWM Servo Motor
+//    while (1) {
+//  	  //2ms Pwm - Servo motor arm rotates to 180 degree
+//  	  __HAL_TIM_SetCompare(&htim5, TIM_CHANNEL_1, 100);
+//  	  HAL_Delay(1000); // 1000ms
+//
+//  	  //1.5ms Pwm - Servo motor arm rotates to 90 degree
+//  	  __HAL_TIM_SetCompare(&htim5, TIM_CHANNEL_1, 75);
+//  	  HAL_Delay(1000); // 1000ms
+//
+//  	  //1ms Pwm - Servo motor arm rotates to 0 degree
+//  	  __HAL_TIM_SetCompare(&htim5, TIM_CHANNEL_1, 50);
+//  	  HAL_Delay(1000); // 1000ms
+//    }
   /* USER CODE END 2 */
 
   /* Init scheduler */
@@ -478,6 +495,65 @@ static void MX_OCTOSPI1_Init(void)
     Error_Handler();
   }
   /* USER CODE END OCTOSPI1_Init 2 */
+
+}
+
+/**
+  * @brief TIM5 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM5_Init(void)
+{
+
+  /* USER CODE BEGIN TIM5_Init 0 */
+
+  /* USER CODE END TIM5_Init 0 */
+
+  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+  TIM_OC_InitTypeDef sConfigOC = {0};
+
+  /* USER CODE BEGIN TIM5_Init 1 */
+
+  /* USER CODE END TIM5_Init 1 */
+  htim5.Instance = TIM5;
+  htim5.Init.Prescaler = 2800-1;
+  htim5.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim5.Init.Period = 1000-1;
+  htim5.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim5.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim5) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+  if (HAL_TIM_ConfigClockSource(&htim5, &sClockSourceConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  if (HAL_TIM_PWM_Init(&htim5) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim5, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sConfigOC.OCMode = TIM_OCMODE_PWM1;
+  sConfigOC.Pulse = 0;
+  sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
+  sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
+  if (HAL_TIM_PWM_ConfigChannel(&htim5, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM5_Init 2 */
+
+  /* USER CODE END TIM5_Init 2 */
+  HAL_TIM_MspPostInit(&htim5);
 
 }
 
