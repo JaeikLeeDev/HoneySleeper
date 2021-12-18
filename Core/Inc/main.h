@@ -66,6 +66,10 @@ void Error_Handler(void);
 #define MCU_ACTIVE_GPIO_Port GPIOI
 #define VSYNC_FREQ_Pin GPIO_PIN_12
 #define VSYNC_FREQ_GPIO_Port GPIOA
+#define stepper_out_1_Pin GPIO_PIN_9
+#define stepper_out_1_GPIO_Port GPIOI
+#define stepper_out_3_Pin GPIO_PIN_2
+#define stepper_out_3_GPIO_Port GPIOE
 #define LED2_Pin GPIO_PIN_2
 #define LED2_GPIO_Port GPIOG
 #define LCD_INT_Pin GPIO_PIN_2
@@ -75,8 +79,12 @@ void Error_Handler(void);
 #define RENDER_TIME_GPIO_Port GPIOB
 #define FRAME_RATE_Pin GPIO_PIN_15
 #define FRAME_RATE_GPIO_Port GPIOB
+#define stepper_out_2_Pin GPIO_PIN_9
+#define stepper_out_2_GPIO_Port GPIOH
 #define LCD_BL_CTRL_Pin GPIO_PIN_1
 #define LCD_BL_CTRL_GPIO_Port GPIOA
+#define stepper_out_4_Pin GPIO_PIN_11
+#define stepper_out_4_GPIO_Port GPIOH
 #define LCD_ON_OFF_Pin GPIO_PIN_2
 #define LCD_ON_OFF_GPIO_Port GPIOA
 /* USER CODE BEGIN Private defines */
@@ -88,5 +96,3 @@ void Error_Handler(void);
 #endif
 
 #endif /* __MAIN_H */
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
