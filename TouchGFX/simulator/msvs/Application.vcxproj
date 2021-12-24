@@ -24,6 +24,16 @@
     <ClCompile Include="..\..\gui\src\mainscreen_screen\MainScreenPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\mainscreen_screen\MainScreenView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\mainscreen_screen\MainScreenViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\containers\WakeupHour.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\WakeupHourBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\containers\WakeupMin.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\WakeupMinBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\wakeupsettingscreen_screen\WakeupSettingScreenPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\wakeupsettingscreen_screen\WakeupSettingScreenView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\wakeupsettingscreen_screen\WakeupSettingScreenViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\sleepstartscreen_screen\SleepStartScreenPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\sleepstartscreen_screen\SleepStartScreenView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\sleepstartscreen_screen\SleepStartScreenViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -177,6 +187,16 @@
     <ClInclude Include="..\..\gui\include\gui\mainscreen_screen\MainScreenPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\mainscreen_screen\MainScreenView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\mainscreen_screen\MainScreenViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\containers\WakeupHour.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\WakeupHourBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\containers\WakeupMin.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\WakeupMinBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\wakeupsettingscreen_screen\WakeupSettingScreenPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\wakeupsettingscreen_screen\WakeupSettingScreenView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\wakeupsettingscreen_screen\WakeupSettingScreenViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\sleepstartscreen_screen\SleepStartScreenPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\sleepstartscreen_screen\SleepStartScreenView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\sleepstartscreen_screen\SleepStartScreenViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

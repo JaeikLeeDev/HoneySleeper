@@ -20,8 +20,18 @@
             "Height": 29,
             "Pressed": "buttonLightOffPressed.png",
             "Released": "buttonLightOffReleased.png",
-            "Alpha": 200,
+            "Alpha": 230,
             "TextId": "__SingleUse_QYQ8",
+            "ReleasedColor": {
+              "Red": 51,
+              "Green": 51,
+              "Blue": 51
+            },
+            "PressedColor": {
+              "Red": 17,
+              "Green": 17,
+              "Blue": 17
+            },
             "TextRotation": "0"
           },
           {
@@ -33,8 +43,18 @@
             "Height": 47,
             "Pressed": "buttonLightOnPressed.png",
             "Released": "buttonLightOnReleased.png",
-            "Alpha": 200,
+            "Alpha": 230,
             "TextId": "__SingleUse_RCM2",
+            "ReleasedColor": {
+              "Red": 51,
+              "Green": 51,
+              "Blue": 51
+            },
+            "PressedColor": {
+              "Red": 17,
+              "Green": 17,
+              "Blue": 17
+            },
             "TextRotation": "0"
           },
           {
@@ -58,9 +78,9 @@
             "Alpha": 230,
             "TextId": "__SingleUse_8Y2V",
             "ReleasedColor": {
-              "Red": 17,
-              "Green": 17,
-              "Blue": 17
+              "Red": 51,
+              "Green": 51,
+              "Blue": 51
             },
             "PressedColor": {
               "Red": 17,
@@ -80,10 +100,386 @@
             "Released": "wakeupSettingInfo.png"
           }
         ],
+        "Interactions": [
+          {
+            "InteractionName": "GoToWakeupSetting",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWakeupInfo"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "WakeupSettingScreen"
+            }
+          },
+          {
+            "InteractionName": "GoToSleepStart",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonSleepStart"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "South",
+              "ActionComponent": "SleepStartScreen"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "WakeupSettingScreen",
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "background",
+            "Width": 480,
+            "Height": 272,
+            "RelativeFilename": "background_wakeupSettingScreen.png"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonCancel",
+            "X": 14,
+            "Y": 7,
+            "Width": 44,
+            "Height": 17,
+            "Pressed": "buttonCancelDonePressed.png",
+            "Released": "buttonCancelDoneReleased.png",
+            "Alpha": 230,
+            "TextId": "__SingleUse_DA0Y",
+            "ReleasedColor": {
+              "Red": 51,
+              "Green": 51,
+              "Blue": 51
+            },
+            "PressedColor": {
+              "Red": 17,
+              "Green": 17,
+              "Blue": 17
+            },
+            "TextRotation": "0"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonDone",
+            "X": 421,
+            "Y": 7,
+            "Width": 44,
+            "Height": 17,
+            "Pressed": "buttonCancelDonePressed.png",
+            "Released": "buttonCancelDoneReleased.png",
+            "Alpha": 230,
+            "TextId": "__SingleUse_BVCT",
+            "ReleasedColor": {
+              "Red": 51,
+              "Green": 51,
+              "Blue": 51
+            },
+            "PressedColor": {
+              "Red": 17,
+              "Green": 17,
+              "Blue": 17
+            },
+            "TextRotation": "0"
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "toggleButtonAlarmUse",
+            "X": 249,
+            "Y": 188,
+            "Width": 128,
+            "Height": 38,
+            "Pressed": "__designer\\Blue_Togglebars_Toggle_round_large_button_ON.png",
+            "Released": "__designer\\Blue_Togglebars_Toggle_round_large_button_OFF.png",
+            "Alpha": 200,
+            "Style": "Style4"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaAlarmUse",
+            "X": 33,
+            "Y": 198,
+            "Width": 195,
+            "Height": 19,
+            "TextId": "__SingleUse_FD14",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 17,
+              "Green": 17,
+              "Blue": 17
+            },
+            "Alpha": 230,
+            "AutoSize": true
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "toggleButtonLightUse",
+            "X": 249,
+            "Y": 131,
+            "Width": 128,
+            "Height": 38,
+            "Pressed": "__designer\\Blue_Togglebars_Toggle_round_large_button_ON.png",
+            "Released": "__designer\\Blue_Togglebars_Toggle_round_large_button_OFF.png",
+            "Alpha": 200,
+            "Style": "Style4"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaLightUse",
+            "X": 33,
+            "Y": 141,
+            "Width": 195,
+            "Height": 19,
+            "TextId": "__SingleUse_N3EO",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 17,
+              "Green": 17,
+              "Blue": 17
+            },
+            "Alpha": 230,
+            "AutoSize": true
+          },
+          {
+            "Type": "ScrollWheel",
+            "Name": "scrollWheelWkaeupMin",
+            "X": 172,
+            "Y": 80,
+            "Width": 25,
+            "Height": 30,
+            "ItemTemplateName": "WakeupHour",
+            "NumberofItems": 60,
+            "Easing": "Back",
+            "EasingOption": "Out",
+            "SwipeAcceleration": 1.0,
+            "DragAcceleration": 1.0
+          },
+          {
+            "Type": "ScrollWheel",
+            "Name": "scrollWheelWkaeupHour",
+            "X": 145,
+            "Y": 80,
+            "Width": 25,
+            "Height": 30,
+            "ItemTemplateName": "WakeupHour",
+            "NumberofItems": 24,
+            "InitialElement": 8,
+            "Easing": "Back",
+            "EasingOption": "Out",
+            "SwipeAcceleration": 1.0,
+            "DragAcceleration": 1.0
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaWakeupAt",
+            "X": 33,
+            "Y": 85,
+            "Width": 85,
+            "Height": 19,
+            "TextId": "__SingleUse_3IFJ",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 17,
+              "Green": 17,
+              "Blue": 17
+            },
+            "Alpha": 230,
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaColon",
+            "X": 168,
+            "Y": 85,
+            "Width": 7,
+            "Height": 19,
+            "TextId": "__SingleUse_TBGZ",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 17,
+              "Green": 17,
+              "Blue": 17
+            },
+            "Alpha": 230,
+            "AutoSize": true
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "ReturnToMain",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonCancel"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "MainScreen"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "SleepStartScreen",
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "background",
+            "Width": 480,
+            "Height": 272,
+            "RelativeFilename": "background_sleepStartScreen.png"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonCancel",
+            "X": 14,
+            "Y": 7,
+            "Width": 44,
+            "Height": 17,
+            "Pressed": "buttonCancelDonePressed.png",
+            "Released": "buttonCancelDoneReleased.png",
+            "Alpha": 230,
+            "TextId": "__SingleUse_5QAN",
+            "ReleasedColor": {
+              "Red": 51,
+              "Green": 51,
+              "Blue": 51
+            },
+            "PressedColor": {
+              "Red": 17,
+              "Green": 17,
+              "Blue": 17
+            },
+            "TextRotation": "0"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaHope",
+            "X": 121,
+            "Y": 143,
+            "Width": 239,
+            "Height": 25,
+            "TextId": "__SingleUse_91MP",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 17,
+              "Green": 17,
+              "Blue": 17
+            },
+            "Alpha": 230,
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaWakeupAt",
+            "X": 173,
+            "Y": 95,
+            "Width": 135,
+            "Height": 19,
+            "TextId": "__SingleUse_U0K9",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 17,
+              "Green": 17,
+              "Blue": 17
+            },
+            "Alpha": 230,
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_3JJ3",
+              "UseBuffer": true,
+              "BufferSize": 3
+            },
+            "Wildcard2": {
+              "TextId": "__SingleUse_ID00",
+              "UseBuffer": true,
+              "BufferSize": 3
+            }
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "ReturnToMain",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonCancel"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "North",
+              "ActionComponent": "MainScreen"
+            }
+          }
+        ]
+      }
+    ],
+    "CustomContainerDefinitions": [
+      {
+        "Name": "WakeupHour",
+        "Width": 25,
+        "Height": 30,
+        "Components": [
+          {
+            "Type": "TextArea",
+            "Name": "hour",
+            "X": 3,
+            "Y": 6,
+            "Width": 19,
+            "Height": 19,
+            "TextId": "__SingleUse_JOA5",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 17,
+              "Green": 17,
+              "Blue": 17
+            },
+            "Alpha": 230,
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_E8T6",
+              "UseBuffer": true,
+              "BufferSize": 3
+            }
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "WakeupMin",
+        "Width": 25,
+        "Height": 30,
+        "Components": [
+          {
+            "Type": "TextArea",
+            "Name": "min",
+            "X": 3,
+            "Y": 6,
+            "Width": 19,
+            "Height": 19,
+            "TextId": "__SingleUse_55E1",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 17,
+              "Green": 17,
+              "Blue": 17
+            },
+            "Alpha": 230,
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_MO2W",
+              "UseBuffer": true,
+              "BufferSize": 3
+            }
+          }
+        ],
         "Interactions": []
       }
     ],
-    "CustomContainerDefinitions": [],
     "Name": "jarik_lives_quest6_HoneySleeper",
     "Resolution": {
       "Width": 480,

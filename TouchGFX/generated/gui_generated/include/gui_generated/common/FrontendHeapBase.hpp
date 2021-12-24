@@ -9,11 +9,17 @@
 #include <mvp/MVPHeap.hpp>
 
 #include <touchgfx/transitions/NoTransition.hpp>
+#include <touchgfx/transitions/SlideTransition.hpp>
+
 #include <gui/common/FrontendApplication.hpp>
 #include <gui/model/Model.hpp>
 
 #include <gui/mainscreen_screen/MainScreenView.hpp>
 #include <gui/mainscreen_screen/MainScreenPresenter.hpp>
+#include <gui/wakeupsettingscreen_screen/WakeupSettingScreenView.hpp>
+#include <gui/wakeupsettingscreen_screen/WakeupSettingScreenPresenter.hpp>
+#include <gui/sleepstartscreen_screen/SleepStartScreenView.hpp>
+#include <gui/sleepstartscreen_screen/SleepStartScreenPresenter.hpp>
 
 
 /**
@@ -37,7 +43,9 @@ public:
      * @note All view types used in the application MUST be added to this list!
      */
     typedef touchgfx::meta::TypeList< MainScreenView,
-            touchgfx::meta::Nil
+            touchgfx::meta::TypeList< WakeupSettingScreenView,
+            touchgfx::meta::TypeList< SleepStartScreenView,
+            touchgfx::meta::Nil > >
             > GeneratedViewTypes;
 
     /**
@@ -50,7 +58,9 @@ public:
      * @note All presenter types used in the application MUST be added to this list!
      */
     typedef touchgfx::meta::TypeList< MainScreenPresenter,
-            touchgfx::meta::Nil
+            touchgfx::meta::TypeList< WakeupSettingScreenPresenter,
+            touchgfx::meta::TypeList< SleepStartScreenPresenter,
+            touchgfx::meta::Nil > >
             > GeneratedPresenterTypes;
 
     /**
@@ -63,7 +73,11 @@ public:
      * @note All transition types used in the application MUST be added to this list!
      */
     typedef touchgfx::meta::TypeList< touchgfx::NoTransition,
-            touchgfx::meta::Nil
+            touchgfx::meta::TypeList< SlideTransition<EAST>,
+            touchgfx::meta::TypeList< SlideTransition<SOUTH>,
+            touchgfx::meta::TypeList< SlideTransition<WEST>,
+            touchgfx::meta::TypeList< SlideTransition<NORTH>,
+            touchgfx::meta::Nil > > > >
             > GeneratedTransitionTypes;
 
     /**

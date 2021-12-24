@@ -18,15 +18,19 @@ struct Typography
     static const touchgfx::FontId SMALL = 2;
     static const touchgfx::FontId LIGHTBUTTON = 3;
     static const touchgfx::FontId INBOXTEXT = 4;
+    static const touchgfx::FontId CANCELDONEBUTTON = 5;
+    static const touchgfx::FontId MSMALL = 6;
 };
 
 struct TypographyFontIndex
 {
-    static const touchgfx::FontId DEFAULT = 0;     // verdana_20_4bpp
-    static const touchgfx::FontId LARGE = 1;       // verdana_40_4bpp
-    static const touchgfx::FontId SMALL = 2;       // verdana_10_4bpp
-    static const touchgfx::FontId LIGHTBUTTON = 2; // verdana_10_4bpp
-    static const touchgfx::FontId INBOXTEXT = 3;   // verdana_15_4bpp
+    static const touchgfx::FontId DEFAULT = 0;          // verdana_20_4bpp
+    static const touchgfx::FontId LARGE = 1;            // verdana_40_4bpp
+    static const touchgfx::FontId SMALL = 2;            // verdana_10_4bpp
+    static const touchgfx::FontId LIGHTBUTTON = 2;      // verdana_10_4bpp
+    static const touchgfx::FontId INBOXTEXT = 3;        // verdana_15_4bpp
+    static const touchgfx::FontId CANCELDONEBUTTON = 2; // verdana_10_4bpp
+    static const touchgfx::FontId MSMALL = 3;           // verdana_15_4bpp
     static const uint16_t NUMBER_OF_FONTS = 4;
 };
 

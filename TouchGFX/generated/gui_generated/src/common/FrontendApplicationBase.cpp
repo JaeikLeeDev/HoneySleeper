@@ -11,6 +11,10 @@
 #include<platform/driver/lcd/LCD24bpp.hpp>
 #include <gui/mainscreen_screen/MainScreenView.hpp>
 #include <gui/mainscreen_screen/MainScreenPresenter.hpp>
+#include <gui/wakeupsettingscreen_screen/WakeupSettingScreenView.hpp>
+#include <gui/wakeupsettingscreen_screen/WakeupSettingScreenPresenter.hpp>
+#include <gui/sleepstartscreen_screen/SleepStartScreenView.hpp>
+#include <gui/sleepstartscreen_screen/SleepStartScreenPresenter.hpp>
 
 using namespace touchgfx;
 
@@ -40,4 +44,52 @@ void FrontendApplicationBase::gotoMainScreenScreenNoTransition()
 void FrontendApplicationBase::gotoMainScreenScreenNoTransitionImpl()
 {
     touchgfx::makeTransition<MainScreenView, MainScreenPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+void FrontendApplicationBase::gotoMainScreenScreenSlideTransitionWest()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoMainScreenScreenSlideTransitionWestImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoMainScreenScreenSlideTransitionWestImpl()
+{
+    touchgfx::makeTransition<MainScreenView, MainScreenPresenter, touchgfx::SlideTransition<WEST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+void FrontendApplicationBase::gotoMainScreenScreenSlideTransitionNorth()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoMainScreenScreenSlideTransitionNorthImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoMainScreenScreenSlideTransitionNorthImpl()
+{
+    touchgfx::makeTransition<MainScreenView, MainScreenPresenter, touchgfx::SlideTransition<NORTH>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+// WakeupSettingScreen
+
+void FrontendApplicationBase::gotoWakeupSettingScreenScreenSlideTransitionEast()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoWakeupSettingScreenScreenSlideTransitionEastImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoWakeupSettingScreenScreenSlideTransitionEastImpl()
+{
+    touchgfx::makeTransition<WakeupSettingScreenView, WakeupSettingScreenPresenter, touchgfx::SlideTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+// SleepStartScreen
+
+void FrontendApplicationBase::gotoSleepStartScreenScreenSlideTransitionSouth()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoSleepStartScreenScreenSlideTransitionSouthImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoSleepStartScreenScreenSlideTransitionSouthImpl()
+{
+    touchgfx::makeTransition<SleepStartScreenView, SleepStartScreenPresenter, touchgfx::SlideTransition<SOUTH>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
