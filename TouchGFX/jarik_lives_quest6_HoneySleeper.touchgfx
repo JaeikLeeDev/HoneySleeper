@@ -2,8 +2,84 @@
   "Application": {
     "Screens": [
       {
-        "Name": "Screen1",
-        "Components": [],
+        "Name": "MainScreen",
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "background",
+            "Width": 480,
+            "Height": 272,
+            "RelativeFilename": "background_MainScreen.png"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonLightOff",
+            "X": 48,
+            "Y": 77,
+            "Width": 29,
+            "Height": 29,
+            "Pressed": "buttonLightOffPressed.png",
+            "Released": "buttonLightOffReleased.png",
+            "Alpha": 200,
+            "TextId": "__SingleUse_QYQ8",
+            "TextRotation": "0"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonLightOn",
+            "X": 187,
+            "Y": 68,
+            "Width": 47,
+            "Height": 47,
+            "Pressed": "buttonLightOnPressed.png",
+            "Released": "buttonLightOnReleased.png",
+            "Alpha": 200,
+            "TextId": "__SingleUse_RCM2",
+            "TextRotation": "0"
+          },
+          {
+            "Type": "Image",
+            "Name": "imgSwitch",
+            "X": 91,
+            "Y": 70,
+            "Width": 86,
+            "Height": 42,
+            "RelativeFilename": "icon_light_on.png"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonSleepStart",
+            "X": 41,
+            "Y": 186,
+            "Width": 199,
+            "Height": 54,
+            "Pressed": "buttonSleepStartPressed.png",
+            "Released": "buttonSleepStartReleased.png",
+            "Alpha": 230,
+            "TextId": "__SingleUse_8Y2V",
+            "ReleasedColor": {
+              "Red": 17,
+              "Green": 17,
+              "Blue": 17
+            },
+            "PressedColor": {
+              "Red": 17,
+              "Green": 17,
+              "Blue": 17
+            },
+            "TextRotation": "0"
+          },
+          {
+            "Type": "Button",
+            "Name": "buttonWakeupInfo",
+            "X": 285,
+            "Y": 33,
+            "Width": 152,
+            "Height": 207,
+            "Pressed": "wakeupSettingInfo.png",
+            "Released": "wakeupSettingInfo.png"
+          }
+        ],
         "Interactions": []
       }
     ],
@@ -14,7 +90,7 @@
       "Height": 272
     },
     "SelectedColorDepth": 24,
-    "StartupScreenName": "Screen1",
+    "StartupScreenName": "MainScreen",
     "SelectedStartupLanguage": "GB",
     "Skin": "Blue",
     "TouchGfxPath": "../Middlewares/ST/touchgfx",
