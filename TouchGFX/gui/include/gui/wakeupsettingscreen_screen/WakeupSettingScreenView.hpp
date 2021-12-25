@@ -11,7 +11,17 @@ public:
     virtual ~WakeupSettingScreenView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+    void updateDigitalClock(int digitalHours, int digitalMinutes, int digitalSeconds);
+
+    virtual void buttonHourUpClicked();
+    virtual void buttonHourDownClicked();
+    virtual void buttonMinUpClicked();
+    virtual void buttonMinDownClicked();
+    virtual void buttonDoneClicked();
+
 protected:
+    int hour;
+    int minute;
 };
 
 #endif // WAKEUPSETTINGSCREENVIEW_HPP

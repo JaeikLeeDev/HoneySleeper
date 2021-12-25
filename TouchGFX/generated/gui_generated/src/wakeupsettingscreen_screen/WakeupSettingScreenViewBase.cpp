@@ -7,8 +7,7 @@
 #include <texts/TextKeysAndLanguages.hpp>
 
 WakeupSettingScreenViewBase::WakeupSettingScreenViewBase() :
-    buttonCallback(this, &WakeupSettingScreenViewBase::buttonCallbackHandler),
-    updateItemCallback(this, &WakeupSettingScreenViewBase::updateItemCallbackHandler)
+    buttonCallback(this, &WakeupSettingScreenViewBase::buttonCallbackHandler)
 {
 
     __background.setPosition(0, 0, 480, 272);
@@ -31,6 +30,7 @@ WakeupSettingScreenViewBase::WakeupSettingScreenViewBase() :
     buttonDone.setLabelColor(touchgfx::Color::getColorFromRGB(51, 51, 51));
     buttonDone.setLabelColorPressed(touchgfx::Color::getColorFromRGB(17, 17, 17));
     buttonDone.setAlpha(230);
+    buttonDone.setAction(buttonCallback);
 
     toggleButtonAlarmUse.setXY(249, 188);
     toggleButtonAlarmUse.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_ROUND_LARGE_BUTTON_OFF_ID), touchgfx::Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_ROUND_LARGE_BUTTON_ON_ID));
@@ -51,32 +51,6 @@ WakeupSettingScreenViewBase::WakeupSettingScreenViewBase() :
     textAreaLightUse.setLinespacing(0);
     textAreaLightUse.setAlpha(230);
     textAreaLightUse.setTypedText(touchgfx::TypedText(T___SINGLEUSE_N3EO));
-
-    scrollWheelWkaeupMin.setPosition(153, 79, 25, 30);
-    scrollWheelWkaeupMin.setHorizontal(false);
-    scrollWheelWkaeupMin.setCircular(false);
-    scrollWheelWkaeupMin.setEasingEquation(touchgfx::EasingEquations::backEaseOut);
-    scrollWheelWkaeupMin.setSwipeAcceleration(10);
-    scrollWheelWkaeupMin.setDragAcceleration(10);
-    scrollWheelWkaeupMin.setNumberOfItems(60);
-    scrollWheelWkaeupMin.setSelectedItemOffset(0);
-    scrollWheelWkaeupMin.setDrawableSize(30, 0);
-    scrollWheelWkaeupMin.setDrawables(scrollWheelWkaeupMinListItems, updateItemCallback);
-    scrollWheelWkaeupMin.animateToItem(0, 0);
-    scrollWheelWkaeupMin.setVisible(false);
-
-    scrollWheelWkaeupHour.setPosition(126, 79, 25, 30);
-    scrollWheelWkaeupHour.setHorizontal(false);
-    scrollWheelWkaeupHour.setCircular(false);
-    scrollWheelWkaeupHour.setEasingEquation(touchgfx::EasingEquations::backEaseOut);
-    scrollWheelWkaeupHour.setSwipeAcceleration(10);
-    scrollWheelWkaeupHour.setDragAcceleration(10);
-    scrollWheelWkaeupHour.setNumberOfItems(24);
-    scrollWheelWkaeupHour.setSelectedItemOffset(0);
-    scrollWheelWkaeupHour.setDrawableSize(30, 0);
-    scrollWheelWkaeupHour.setDrawables(scrollWheelWkaeupHourListItems, updateItemCallback);
-    scrollWheelWkaeupHour.animateToItem(8, 0);
-    scrollWheelWkaeupHour.setVisible(false);
 
     textAreaWakeupAt.setXY(33, 85);
     textAreaWakeupAt.setColor(touchgfx::Color::getColorFromRGB(17, 17, 17));
@@ -104,18 +78,22 @@ WakeupSettingScreenViewBase::WakeupSettingScreenViewBase() :
 
     buttonMinDown.setXY(159, 106);
     buttonMinDown.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTONDOWNRELEASED_ID), touchgfx::Bitmap(BITMAP_BUTTONDOWNPRESSED_ID));
+    buttonMinDown.setAction(buttonCallback);
     buttonMinDown.setAlpha(200);
 
     buttonMinUp.setXY(159, 77);
     buttonMinUp.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTONUPRELEASED_ID), touchgfx::Bitmap(BITMAP_BUTTONUPPRESSED_ID));
+    buttonMinUp.setAction(buttonCallback);
     buttonMinUp.setAlpha(200);
 
     buttonHourDown.setXY(132, 106);
     buttonHourDown.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTONDOWNRELEASED_ID), touchgfx::Bitmap(BITMAP_BUTTONDOWNPRESSED_ID));
+    buttonHourDown.setAction(buttonCallback);
     buttonHourDown.setAlpha(200);
 
     buttonHourUp.setXY(132, 76);
     buttonHourUp.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTONUPRELEASED_ID), touchgfx::Bitmap(BITMAP_BUTTONUPPRESSED_ID));
+    buttonHourUp.setAction(buttonCallback);
     buttonHourUp.setAlpha(200);
 
     textAreaColon.setXY(149, 84);
@@ -139,8 +117,6 @@ WakeupSettingScreenViewBase::WakeupSettingScreenViewBase() :
     add(textAreaAlarmUse);
     add(toggleButtonLightUse);
     add(textAreaLightUse);
-    add(scrollWheelWkaeupMin);
-    add(scrollWheelWkaeupHour);
     add(textAreaWakeupAt);
     add(textAreaHour);
     add(textAreaMinute);
@@ -154,16 +130,7 @@ WakeupSettingScreenViewBase::WakeupSettingScreenViewBase() :
 
 void WakeupSettingScreenViewBase::setupScreen()
 {
-    scrollWheelWkaeupMin.initialize();
-    for (int i = 0; i < scrollWheelWkaeupMinListItems.getNumberOfDrawables(); i++)
-    {
-        scrollWheelWkaeupMinListItems[i].initialize();
-    }
-    scrollWheelWkaeupHour.initialize();
-    for (int i = 0; i < scrollWheelWkaeupHourListItems.getNumberOfDrawables(); i++)
-    {
-        scrollWheelWkaeupHourListItems[i].initialize();
-    }
+
 }
 
 void WakeupSettingScreenViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
@@ -175,20 +142,39 @@ void WakeupSettingScreenViewBase::buttonCallbackHandler(const touchgfx::Abstract
         //Go to MainScreen with screen transition towards West
         application().gotoMainScreenScreenSlideTransitionWest();
     }
-}
-
-void WakeupSettingScreenViewBase::updateItemCallbackHandler(touchgfx::DrawableListItemsInterface* items, int16_t containerIndex, int16_t itemIndex)
-{
-    if (items == &scrollWheelWkaeupMinListItems)
+    else if (&src == &buttonDone)
     {
-        touchgfx::Drawable* d = items->getDrawable(containerIndex);
-        WakeupHour* cc = (WakeupHour*)d;
-        scrollWheelWkaeupMinUpdateItem(*cc, itemIndex);
+        //Done
+        //When buttonDone clicked call virtual function
+        //Call buttonDoneClicked
+        buttonDoneClicked();
     }
-    if (items == &scrollWheelWkaeupHourListItems)
+    else if (&src == &buttonMinDown)
     {
-        touchgfx::Drawable* d = items->getDrawable(containerIndex);
-        WakeupHour* cc = (WakeupHour*)d;
-        scrollWheelWkaeupHourUpdateItem(*cc, itemIndex);
+        //MinDown
+        //When buttonMinDown clicked call virtual function
+        //Call buttonMinDownClicked
+        buttonMinDownClicked();
+    }
+    else if (&src == &buttonMinUp)
+    {
+        //MinUp
+        //When buttonMinUp clicked call virtual function
+        //Call buttonMinUpClicked
+        buttonMinUpClicked();
+    }
+    else if (&src == &buttonHourDown)
+    {
+        //HourDown
+        //When buttonHourDown clicked call virtual function
+        //Call buttonHourDownClicked
+        buttonHourDownClicked();
+    }
+    else if (&src == &buttonHourUp)
+    {
+        //HourUp
+        //When buttonHourUp clicked call virtual function
+        //Call buttonHourUpClicked
+        buttonHourUpClicked();
     }
 }

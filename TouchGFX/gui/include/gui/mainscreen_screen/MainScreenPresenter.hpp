@@ -34,6 +34,9 @@ public:
     int getCurrentSecond();
     virtual void updateDigitalClock(int digitalHours, int digitalMinutes, int digitalSeconds);
 
+    int getWakeupHour();
+    int getWakeupMinute();
+
 private:
     MainScreenPresenter();
 

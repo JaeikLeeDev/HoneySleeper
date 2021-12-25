@@ -4,7 +4,8 @@
 
 Model::Model()
 	: modelListener(0), lightIsOn(true),
-	  digitalHours(8), digitalMinutes(0), digitalSeconds(0)
+	  digitalHours(8), digitalMinutes(0), digitalSeconds(0),
+	  wakeupHour(8), wakeupMinute(0)
 {
 
 }
@@ -66,4 +67,20 @@ void Model::setCurrentTime(int hour, int minute)
 void Model::updateDigitalClock(int digitalHours, int digitalMinutes, int digitalSeconds)
 {
 	modelListener->updateDigitalClock(digitalHours, digitalMinutes, digitalSeconds);
+}
+
+void Model::setWakeupTime(int hour, int minute)
+{
+	wakeupHour = hour;
+	wakeupMinute = minute;
+}
+
+int Model::getWakeupHour()
+{
+	return wakeupHour;
+}
+
+int Model::getWakeupMinute()
+{
+	return wakeupMinute;
 }

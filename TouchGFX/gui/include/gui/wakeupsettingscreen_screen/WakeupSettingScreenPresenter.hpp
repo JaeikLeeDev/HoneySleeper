@@ -27,6 +27,12 @@ public:
 
     virtual ~WakeupSettingScreenPresenter() {};
 
+    virtual void updateDigitalClock(int digitalHours, int digitalMinutes, int digitalSeconds);
+
+    void setWakeupTime(int hour, int minute);
+    int getWakeupHour();
+    int getWakeupMinute();
+
 private:
     WakeupSettingScreenPresenter();
 

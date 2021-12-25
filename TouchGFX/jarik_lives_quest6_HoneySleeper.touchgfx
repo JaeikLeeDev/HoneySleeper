@@ -109,6 +109,28 @@
             "TextRotation": "0"
           },
           {
+            "Type": "DigitalClock",
+            "Name": "digitalClockWakeupTime",
+            "X": 321,
+            "Y": 136,
+            "Width": 80,
+            "Height": 25,
+            "TextId": "__SingleUse_FEWJ",
+            "DisplayLeadingZeroForHourIndicator": true,
+            "InitialHour": 8
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaSetTimer",
+            "X": 312,
+            "Y": 94,
+            "Width": 98,
+            "Height": 25,
+            "TextId": "__SingleUse_TU3R",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
             "Type": "Button",
             "Name": "buttonWakeupInfo",
             "X": 285,
@@ -312,37 +334,6 @@
             "AutoSize": true
           },
           {
-            "Type": "ScrollWheel",
-            "Name": "scrollWheelWkaeupMin",
-            "X": 153,
-            "Y": 79,
-            "Width": 25,
-            "Height": 30,
-            "Visible": false,
-            "ItemTemplateName": "WakeupHour",
-            "NumberofItems": 60,
-            "Easing": "Back",
-            "EasingOption": "Out",
-            "SwipeAcceleration": 1.0,
-            "DragAcceleration": 1.0
-          },
-          {
-            "Type": "ScrollWheel",
-            "Name": "scrollWheelWkaeupHour",
-            "X": 126,
-            "Y": 79,
-            "Width": 25,
-            "Height": 30,
-            "Visible": false,
-            "ItemTemplateName": "WakeupHour",
-            "NumberofItems": 24,
-            "InitialElement": 8,
-            "Easing": "Back",
-            "EasingOption": "Out",
-            "SwipeAcceleration": 1.0,
-            "DragAcceleration": 1.0
-          },
-          {
             "Type": "TextArea",
             "Name": "textAreaWakeupAt",
             "X": 33,
@@ -490,6 +481,61 @@
               "ScreenTransitionType": "ScreenTransitionSlide",
               "ScreenTransitionDirection": "West",
               "ActionComponent": "MainScreen"
+            }
+          },
+          {
+            "InteractionName": "HourUp",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonHourUp"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "buttonHourUpClicked"
+            }
+          },
+          {
+            "InteractionName": "HourDown",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonHourDown"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "buttonHourDownClicked"
+            }
+          },
+          {
+            "InteractionName": "MinUp",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonMinUp"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "buttonMinUpClicked"
+            }
+          },
+          {
+            "InteractionName": "MinDown",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonMinDown"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "buttonMinDownClicked"
+            }
+          },
+          {
+            "InteractionName": "Done",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonDone"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "buttonDoneClicked"
             }
           }
         ]
@@ -790,7 +836,7 @@
             },
             "Action": {
               "Type": "ActionCustom",
-              "FunctionName": "buttonHouwDownClicked"
+              "FunctionName": "buttonHourDownClicked"
             }
           },
           {
@@ -829,68 +875,7 @@
         ]
       }
     ],
-    "CustomContainerDefinitions": [
-      {
-        "Name": "WakeupHour",
-        "Width": 25,
-        "Height": 30,
-        "Components": [
-          {
-            "Type": "TextArea",
-            "Name": "hour",
-            "X": 3,
-            "Y": 6,
-            "Width": 19,
-            "Height": 19,
-            "TextId": "__SingleUse_JOA5",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 17,
-              "Green": 17,
-              "Blue": 17
-            },
-            "Alpha": 230,
-            "AutoSize": true,
-            "Wildcard1": {
-              "TextId": "__SingleUse_E8T6",
-              "UseBuffer": true,
-              "BufferSize": 3
-            }
-          }
-        ],
-        "Interactions": []
-      },
-      {
-        "Name": "WakeupMin",
-        "Width": 25,
-        "Height": 30,
-        "Components": [
-          {
-            "Type": "TextArea",
-            "Name": "min",
-            "X": 3,
-            "Y": 6,
-            "Width": 19,
-            "Height": 19,
-            "TextId": "__SingleUse_55E1",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 17,
-              "Green": 17,
-              "Blue": 17
-            },
-            "Alpha": 230,
-            "AutoSize": true,
-            "Wildcard1": {
-              "TextId": "__SingleUse_MO2W",
-              "UseBuffer": true,
-              "BufferSize": 3
-            }
-          }
-        ],
-        "Interactions": []
-      }
-    ],
+    "CustomContainerDefinitions": [],
     "Name": "jarik_lives_quest6_HoneySleeper",
     "Resolution": {
       "Width": 480,

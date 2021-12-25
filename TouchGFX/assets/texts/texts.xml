@@ -22,18 +22,6 @@
     <Text Id="__SingleUse_3IFJ" TypographyId="MSmallWildcard" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Wake up at</Translation>
     </Text>
-    <Text Id="__SingleUse_JOA5" TypographyId="MSmallWildcard" Alignment="Center" Direction="LTR">
-      <Translation Language="GB">&lt;value&gt;</Translation>
-    </Text>
-    <Text Id="__SingleUse_E8T6" TypographyId="MSmallWildcard" Alignment="Left" Direction="LTR">
-      <Translation Language="GB">00</Translation>
-    </Text>
-    <Text Id="__SingleUse_55E1" TypographyId="MSmallWildcard" Alignment="Center" Direction="LTR">
-      <Translation Language="GB">&lt;value&gt;</Translation>
-    </Text>
-    <Text Id="__SingleUse_MO2W" TypographyId="MSmallWildcard" Alignment="Left" Direction="LTR">
-      <Translation Language="GB">00</Translation>
-    </Text>
     <Text Id="__SingleUse_TBGZ" TypographyId="MSmallWildcard" Alignment="Left" Direction="LTR">
       <Translation Language="GB">:</Translation>
     </Text>
@@ -97,9 +85,15 @@
     <Text Id="__SingleUse_PR7W" TypographyId="MSmallWildcard" Alignment="Center" Direction="LTR">
       <Translation Language="GB">&lt;&gt;</Translation>
     </Text>
+    <Text Id="__SingleUse_TU3R" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Set Timer</Translation>
+    </Text>
+    <Text Id="__SingleUse_FEWJ" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">&lt;&gt;</Translation>
+    </Text>
   </Texts>
   <Typographies>
-    <Typography Id="Default" Font="verdana.ttf" Size="20" Bpp="4" FallbackCharacter="?" />
+    <Typography Id="Default" Font="verdana.ttf" Size="20" Bpp="4" FallbackCharacter="?" WidgetWildcardCharacters="0123456789 :APM" WildcardCharacterRanges="0-9" />
     <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" FallbackCharacter="?" WildcardCharacterRanges="0-9" />
     <Typography Id="Small" Font="verdana.ttf" Size="10" Bpp="4" FallbackCharacter="?" />
     <Typography Id="LightButton" Font="verdana.ttf" Size="10" Bpp="4" FallbackCharacter="?" />

@@ -11,6 +11,7 @@ void MainScreenView::setupScreen()
 {
     MainScreenViewBase::setupScreen();
     digitalClock.setClickAction(digitalClockClickedCallback);
+    digitalClockWakeupTime.setTime24Hour(presenter->getWakeupHour(), presenter->getWakeupMinute(), 0);
 }
 
 void MainScreenView::tearDownScreen()

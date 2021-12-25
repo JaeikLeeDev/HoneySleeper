@@ -130,8 +130,8 @@ void SetClockScreenViewBase::buttonCallbackHandler(const touchgfx::AbstractButto
     {
         //HourDown
         //When buttonHourDown clicked call virtual function
-        //Call buttonHouwDownClicked
-        buttonHouwDownClicked();
+        //Call buttonHourDownClicked
+        buttonHourDownClicked();
     }
     else if (&src == &buttonHourUp)
     {

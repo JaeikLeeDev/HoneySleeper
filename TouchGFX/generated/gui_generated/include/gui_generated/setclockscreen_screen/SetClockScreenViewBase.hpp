@@ -29,7 +29,7 @@ public:
         // Override and implement this function in SetClockScreen
     }
 
-    virtual void buttonHouwDownClicked()
+    virtual void buttonHourDownClicked()
     {
         // Override and implement this function in SetClockScreen
     }

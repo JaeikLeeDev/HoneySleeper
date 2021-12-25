@@ -13,7 +13,7 @@ public:
     virtual void tearDownScreen();
 
     virtual void buttonHourUpClicked();
-    virtual void buttonHouwDownClicked();
+    virtual void buttonHourDownClicked();
     virtual void buttonMinUpClicked();
     virtual void buttonMinDownClicked();
     virtual void buttonDoneClicked();

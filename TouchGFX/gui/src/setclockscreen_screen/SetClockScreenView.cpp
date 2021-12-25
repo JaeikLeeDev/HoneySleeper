@@ -27,7 +27,7 @@ void SetClockScreenView::buttonHourUpClicked()
     textAreaHour.invalidate();
 }
 
-void SetClockScreenView::buttonHouwDownClicked()
+void SetClockScreenView::buttonHourDownClicked()
 {
     hour = (hour + 24 - 1) % 24; // Keep new value in range 0..23
     Unicode::snprintf(textAreaHourBuffer, TEXTAREAHOUR_SIZE, "%02d", hour);

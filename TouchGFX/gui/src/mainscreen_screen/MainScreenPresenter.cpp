@@ -37,6 +37,16 @@ int MainScreenPresenter::getCurrentSecond()
 	return model->getCurrentSecond();
 }
 
+int MainScreenPresenter::getWakeupHour()
+{
+	return model->getWakeupHour();
+}
+
+int MainScreenPresenter::getWakeupMinute()
+{
+	return model->getWakeupMinute();
+}
+
 void MainScreenPresenter::updateDigitalClock(int digitalHours, int digitalMinutes, int digitalSeconds)
 {
 	view.updateDigitalClock(digitalHours, digitalMinutes, digitalSeconds);

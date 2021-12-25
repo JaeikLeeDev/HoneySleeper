@@ -190,12 +190,6 @@
     <Filter Include="Source Files\gui\wakeupsettingscreen_screen">
       <UniqueIdentifier>77231900-0DA2-9768-897F-4A10CB16E571</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\gui\containers">
-      <UniqueIdentifier>A3599676-FC10-C107-C4E0-3A60A51A5DE4</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\gui\containers">
-      <UniqueIdentifier>E6AA8600-6DC3-03C0-80B1-6E864FAC2A19</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\generated\gui_generated\containers">
       <UniqueIdentifier>73F5196D-7E76-5F9D-5458-522ACF91E030</UniqueIdentifier>
     </Filter>
@@ -272,18 +266,6 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\mainscreen_screen\MainScreenViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\mainscreen_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\containers\WakeupHour.cpp">
-      <Filter>Source Files\gui\containers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\WakeupHourBase.cpp">
-      <Filter>Source Files\generated\gui_generated\containers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\containers\WakeupMin.cpp">
-      <Filter>Source Files\gui\containers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\WakeupMinBase.cpp">
-      <Filter>Source Files\generated\gui_generated\containers</Filter>
     </ClCompile>
     <ClCompile Include="..\..\gui\src\wakeupsettingscreen_screen\WakeupSettingScreenPresenter.cpp">
       <Filter>Source Files\gui\wakeupsettingscreen_screen</Filter>
@@ -762,18 +744,6 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\mainscreen_screen\MainScreenViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\mainscreen_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\containers\WakeupHour.hpp">
-      <Filter>Header Files\gui\containers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\WakeupHourBase.hpp">
-      <Filter>Header Files\generated\gui_generated\containers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\containers\WakeupMin.hpp">
-      <Filter>Header Files\gui\containers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\WakeupMinBase.hpp">
-      <Filter>Header Files\generated\gui_generated\containers</Filter>
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\wakeupsettingscreen_screen\WakeupSettingScreenPresenter.hpp">
       <Filter>Header Files\gui\wakeupsettingscreen_screen</Filter>
