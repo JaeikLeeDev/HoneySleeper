@@ -314,10 +314,11 @@
           {
             "Type": "ScrollWheel",
             "Name": "scrollWheelWkaeupMin",
-            "X": 172,
-            "Y": 80,
+            "X": 153,
+            "Y": 79,
             "Width": 25,
             "Height": 30,
+            "Visible": false,
             "ItemTemplateName": "WakeupHour",
             "NumberofItems": 60,
             "Easing": "Back",
@@ -328,10 +329,11 @@
           {
             "Type": "ScrollWheel",
             "Name": "scrollWheelWkaeupHour",
-            "X": 145,
-            "Y": 80,
+            "X": 126,
+            "Y": 79,
             "Width": 25,
             "Height": 30,
+            "Visible": false,
             "ItemTemplateName": "WakeupHour",
             "NumberofItems": 24,
             "InitialElement": 8,
@@ -359,9 +361,97 @@
           },
           {
             "Type": "TextArea",
+            "Name": "textAreaHour",
+            "X": 129,
+            "Y": 86,
+            "Width": 19,
+            "Height": 19,
+            "TextId": "__SingleUse_PXFO",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 17,
+              "Green": 17,
+              "Blue": 17
+            },
+            "Alpha": 230,
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_F9FY",
+              "UseBuffer": true,
+              "BufferSize": 3
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaMinute",
+            "X": 157,
+            "Y": 86,
+            "Width": 19,
+            "Height": 19,
+            "TextId": "__SingleUse_VP4A",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 17,
+              "Green": 17,
+              "Blue": 17
+            },
+            "Alpha": 230,
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_TKPK",
+              "UseBuffer": true,
+              "BufferSize": 3
+            }
+          },
+          {
+            "Type": "Button",
+            "Name": "buttonMinDown",
+            "X": 159,
+            "Y": 106,
+            "Width": 13,
+            "Height": 7,
+            "Pressed": "buttonDownPressed.png",
+            "Released": "buttonDownReleased.png",
+            "Alpha": 200
+          },
+          {
+            "Type": "Button",
+            "Name": "buttonMinUp",
+            "X": 159,
+            "Y": 77,
+            "Width": 13,
+            "Height": 7,
+            "Pressed": "buttonUpPressed.png",
+            "Released": "buttonUpReleased.png",
+            "Alpha": 200
+          },
+          {
+            "Type": "Button",
+            "Name": "buttonHourDown",
+            "X": 132,
+            "Y": 106,
+            "Width": 13,
+            "Height": 7,
+            "Pressed": "buttonDownPressed.png",
+            "Released": "buttonDownReleased.png",
+            "Alpha": 200
+          },
+          {
+            "Type": "Button",
+            "Name": "buttonHourUp",
+            "X": 132,
+            "Y": 76,
+            "Width": 13,
+            "Height": 7,
+            "Pressed": "buttonUpPressed.png",
+            "Released": "buttonUpReleased.png",
+            "Alpha": 200
+          },
+          {
+            "Type": "TextArea",
             "Name": "textAreaColon",
-            "X": 168,
-            "Y": 85,
+            "X": 149,
+            "Y": 84,
             "Width": 7,
             "Height": 19,
             "TextId": "__SingleUse_TBGZ",
@@ -373,6 +463,19 @@
             },
             "Alpha": 230,
             "AutoSize": true
+          },
+          {
+            "Type": "DigitalClock",
+            "Name": "digitalClock",
+            "X": 200,
+            "Y": 4,
+            "Width": 80,
+            "Height": 20,
+            "TextId": "__SingleUse_PR7W",
+            "DisplaySeconds": true,
+            "DisplayLeadingZeroForHourIndicator": true,
+            "InitialHour": 10,
+            "InitialMinute": 10
           }
         ],
         "Interactions": [
@@ -587,7 +690,7 @@
           },
           {
             "Type": "TextArea",
-            "Name": "colon",
+            "Name": "textAreaColon",
             "X": 240,
             "Y": 128,
             "Width": 18,
@@ -601,6 +704,26 @@
             },
             "Alpha": 230,
             "AutoSize": true
+          },
+          {
+            "Type": "Button",
+            "Name": "buttonMinDown",
+            "X": 268,
+            "Y": 192,
+            "Width": 32,
+            "Height": 19,
+            "Pressed": "Down_arrow_pressed.png",
+            "Released": "Down_arrow.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "buttonMinUp",
+            "X": 268,
+            "Y": 103,
+            "Width": 32,
+            "Height": 19,
+            "Pressed": "Up_arrow_pressed.png",
+            "Released": "Up_arrow.png"
           },
           {
             "Type": "Button",
@@ -621,26 +744,6 @@
             "Height": 19,
             "Pressed": "Up_arrow_pressed.png",
             "Released": "Up_arrow.png"
-          },
-          {
-            "Type": "Button",
-            "Name": "buttonMinUp",
-            "X": 268,
-            "Y": 103,
-            "Width": 32,
-            "Height": 19,
-            "Pressed": "Up_arrow_pressed.png",
-            "Released": "Up_arrow.png"
-          },
-          {
-            "Type": "Button",
-            "Name": "buttonMinDown",
-            "X": 268,
-            "Y": 192,
-            "Width": 32,
-            "Height": 19,
-            "Pressed": "Down_arrow_pressed.png",
-            "Released": "Down_arrow.png"
           },
           {
             "Type": "TextArea",

@@ -14,6 +14,9 @@
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/containers/scrollers/ScrollWheel.hpp>
 #include <gui/containers/WakeupHour.hpp>
+#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
+#include <touchgfx/widgets/Button.hpp>
+#include <touchgfx/containers/clock/DigitalClock.hpp>
 
 class WakeupSettingScreenViewBase : public touchgfx::View<WakeupSettingScreenPresenter>
 {
@@ -53,7 +56,22 @@ protected:
     touchgfx::ScrollWheel scrollWheelWkaeupHour;
     touchgfx::DrawableListItems<WakeupHour, 2> scrollWheelWkaeupHourListItems;
     touchgfx::TextArea textAreaWakeupAt;
+    touchgfx::TextAreaWithOneWildcard textAreaHour;
+    touchgfx::TextAreaWithOneWildcard textAreaMinute;
+    touchgfx::Button buttonMinDown;
+    touchgfx::Button buttonMinUp;
+    touchgfx::Button buttonHourDown;
+    touchgfx::Button buttonHourUp;
     touchgfx::TextArea textAreaColon;
+    touchgfx::DigitalClock digitalClock;
+
+    /*
+     * Wildcard Buffers
+     */
+    static const uint16_t TEXTAREAHOUR_SIZE = 3;
+    touchgfx::Unicode::UnicodeChar textAreaHourBuffer[TEXTAREAHOUR_SIZE];
+    static const uint16_t TEXTAREAMINUTE_SIZE = 3;
+    touchgfx::Unicode::UnicodeChar textAreaMinuteBuffer[TEXTAREAMINUTE_SIZE];
 
 private:
 

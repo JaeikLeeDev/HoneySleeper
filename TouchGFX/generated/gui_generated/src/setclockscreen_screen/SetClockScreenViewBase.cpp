@@ -32,42 +32,50 @@ SetClockScreenViewBase::SetClockScreenViewBase() :
     buttonDone.setAlpha(230);
     buttonDone.setAction(buttonCallback);
 
-    textAreaHour.setXY(187, 112);
-    textAreaHour.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textAreaHour.setXY(187, 132);
+    textAreaHour.setColor(touchgfx::Color::getColorFromRGB(17, 17, 17));
     textAreaHour.setLinespacing(0);
+    textAreaHour.setAlpha(230);
     Unicode::snprintf(textAreaHourBuffer, TEXTAREAHOUR_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_S8H4).getText());
     textAreaHour.setWildcard(textAreaHourBuffer);
     textAreaHour.resizeToCurrentText();
     textAreaHour.setTypedText(touchgfx::TypedText(T___SINGLEUSE_IHJ1));
 
-    textAreaMinute.setXY(259, 112);
-    textAreaMinute.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textAreaMinute.setXY(259, 132);
+    textAreaMinute.setColor(touchgfx::Color::getColorFromRGB(17, 17, 17));
     textAreaMinute.setLinespacing(0);
+    textAreaMinute.setAlpha(230);
     Unicode::snprintf(textAreaMinuteBuffer, TEXTAREAMINUTE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_4JX4).getText());
     textAreaMinute.setWildcard(textAreaMinuteBuffer);
     textAreaMinute.resizeToCurrentText();
     textAreaMinute.setTypedText(touchgfx::TypedText(T___SINGLEUSE_PT0B));
 
-    colon.setXY(240, 108);
-    colon.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    colon.setLinespacing(0);
-    colon.setTypedText(touchgfx::TypedText(T___SINGLEUSE_SKS2));
+    textAreaColon.setXY(240, 128);
+    textAreaColon.setColor(touchgfx::Color::getColorFromRGB(17, 17, 17));
+    textAreaColon.setLinespacing(0);
+    textAreaColon.setAlpha(230);
+    textAreaColon.setTypedText(touchgfx::TypedText(T___SINGLEUSE_SKS2));
 
-    buttonHourDown.setXY(196, 172);
-    buttonHourDown.setBitmaps(touchgfx::Bitmap(BITMAP_DOWN_ARROW_ID), touchgfx::Bitmap(BITMAP_DOWN_ARROW_PRESSED_ID));
-    buttonHourDown.setAction(buttonCallback);
+    buttonMinDown.setXY(268, 192);
+    buttonMinDown.setBitmaps(touchgfx::Bitmap(BITMAP_DOWN_ARROW_ID), touchgfx::Bitmap(BITMAP_DOWN_ARROW_PRESSED_ID));
+    buttonMinDown.setAction(buttonCallback);
 
-    buttonHourUp.setXY(196, 83);
-    buttonHourUp.setBitmaps(touchgfx::Bitmap(BITMAP_UP_ARROW_ID), touchgfx::Bitmap(BITMAP_UP_ARROW_PRESSED_ID));
-    buttonHourUp.setAction(buttonCallback);
-
-    buttonMinUp.setXY(268, 83);
+    buttonMinUp.setXY(268, 103);
     buttonMinUp.setBitmaps(touchgfx::Bitmap(BITMAP_UP_ARROW_ID), touchgfx::Bitmap(BITMAP_UP_ARROW_PRESSED_ID));
     buttonMinUp.setAction(buttonCallback);
 
-    buttonMinDown.setXY(268, 172);
-    buttonMinDown.setBitmaps(touchgfx::Bitmap(BITMAP_DOWN_ARROW_ID), touchgfx::Bitmap(BITMAP_DOWN_ARROW_PRESSED_ID));
-    buttonMinDown.setAction(buttonCallback);
+    buttonHourDown.setXY(196, 192);
+    buttonHourDown.setBitmaps(touchgfx::Bitmap(BITMAP_DOWN_ARROW_ID), touchgfx::Bitmap(BITMAP_DOWN_ARROW_PRESSED_ID));
+    buttonHourDown.setAction(buttonCallback);
+
+    buttonHourUp.setXY(196, 103);
+    buttonHourUp.setBitmaps(touchgfx::Bitmap(BITMAP_UP_ARROW_ID), touchgfx::Bitmap(BITMAP_UP_ARROW_PRESSED_ID));
+    buttonHourUp.setAction(buttonCallback);
+
+    textArea1.setXY(165, 3);
+    textArea1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textArea1.setLinespacing(0);
+    textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_QCCC));
 
     add(__background);
     add(background);
@@ -75,11 +83,12 @@ SetClockScreenViewBase::SetClockScreenViewBase() :
     add(buttonDone);
     add(textAreaHour);
     add(textAreaMinute);
-    add(colon);
+    add(textAreaColon);
+    add(buttonMinDown);
+    add(buttonMinUp);
     add(buttonHourDown);
     add(buttonHourUp);
-    add(buttonMinUp);
-    add(buttonMinDown);
+    add(textArea1);
 }
 
 void SetClockScreenViewBase::setupScreen()
@@ -103,6 +112,20 @@ void SetClockScreenViewBase::buttonCallbackHandler(const touchgfx::AbstractButto
         //Call buttonDoneClicked
         buttonDoneClicked();
     }
+    else if (&src == &buttonMinDown)
+    {
+        //MinDown
+        //When buttonMinDown clicked call virtual function
+        //Call buttonMinDownClicked
+        buttonMinDownClicked();
+    }
+    else if (&src == &buttonMinUp)
+    {
+        //MinUp
+        //When buttonMinUp clicked call virtual function
+        //Call buttonMinUpClicked
+        buttonMinUpClicked();
+    }
     else if (&src == &buttonHourDown)
     {
         //HourDown
@@ -116,19 +139,5 @@ void SetClockScreenViewBase::buttonCallbackHandler(const touchgfx::AbstractButto
         //When buttonHourUp clicked call virtual function
         //Call buttonHourUpClicked
         buttonHourUpClicked();
-    }
-    else if (&src == &buttonMinUp)
-    {
-        //MinUp
-        //When buttonMinUp clicked call virtual function
-        //Call buttonMinUpClicked
-        buttonMinUpClicked();
-    }
-    else if (&src == &buttonMinDown)
-    {
-        //MinDown
-        //When buttonMinDown clicked call virtual function
-        //Call buttonMinDownClicked
-        buttonMinDownClicked();
     }
 }

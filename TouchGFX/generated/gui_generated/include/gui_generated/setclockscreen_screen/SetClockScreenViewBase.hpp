@@ -63,11 +63,12 @@ protected:
     touchgfx::ButtonWithLabel buttonDone;
     touchgfx::TextAreaWithOneWildcard textAreaHour;
     touchgfx::TextAreaWithOneWildcard textAreaMinute;
-    touchgfx::TextArea colon;
+    touchgfx::TextArea textAreaColon;
+    touchgfx::Button buttonMinDown;
+    touchgfx::Button buttonMinUp;
     touchgfx::Button buttonHourDown;
     touchgfx::Button buttonHourUp;
-    touchgfx::Button buttonMinUp;
-    touchgfx::Button buttonMinDown;
+    touchgfx::TextArea textArea1;
 
     /*
      * Wildcard Buffers

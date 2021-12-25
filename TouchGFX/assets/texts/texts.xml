@@ -82,6 +82,21 @@
     <Text Id="__SingleUse_QCCC" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Set Current Time</Translation>
     </Text>
+    <Text Id="__SingleUse_PXFO" TypographyId="MSmallWildcard" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">&lt;value&gt;</Translation>
+    </Text>
+    <Text Id="__SingleUse_F9FY" TypographyId="MSmallWildcard" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">08</Translation>
+    </Text>
+    <Text Id="__SingleUse_VP4A" TypographyId="MSmallWildcard" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">&lt;value&gt;</Translation>
+    </Text>
+    <Text Id="__SingleUse_TKPK" TypographyId="MSmallWildcard" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">00</Translation>
+    </Text>
+    <Text Id="__SingleUse_PR7W" TypographyId="MSmallWildcard" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">&lt;&gt;</Translation>
+    </Text>
   </Texts>
   <Typographies>
     <Typography Id="Default" Font="verdana.ttf" Size="20" Bpp="4" FallbackCharacter="?" />
@@ -90,7 +105,7 @@
     <Typography Id="LightButton" Font="verdana.ttf" Size="10" Bpp="4" FallbackCharacter="?" />
     <Typography Id="InBoxText" Font="verdana.ttf" Size="15" Bpp="4" FallbackCharacter="?" />
     <Typography Id="CancelDoneButton" Font="verdana.ttf" Size="10" Bpp="4" FallbackCharacter="?" />
-    <Typography Id="MSmallWildcard" Font="verdana.ttf" Size="15" Bpp="4" FallbackCharacter="?" WildcardCharacterRanges="0-9" />
+    <Typography Id="MSmallWildcard" Font="verdana.ttf" Size="15" Bpp="4" FallbackCharacter="?" WidgetWildcardCharacters="0123456789 :APM" WildcardCharacterRanges="0-9" />
     <Typography Id="DigitalClock" Font="verdana.ttf" Size="15" Bpp="4" FallbackCharacter="?" WidgetWildcardCharacters="0123456789 :APM" />
   </Typographies>
 </TextDatabase>
