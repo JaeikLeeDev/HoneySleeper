@@ -79,6 +79,9 @@
     <Text Id="__SingleUse_SKS2" TypographyId="Large" Alignment="Center" Direction="LTR">
       <Translation Language="GB">:</Translation>
     </Text>
+    <Text Id="__SingleUse_QCCC" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Set Current Time</Translation>
+    </Text>
   </Texts>
   <Typographies>
     <Typography Id="Default" Font="verdana.ttf" Size="20" Bpp="4" FallbackCharacter="?" />

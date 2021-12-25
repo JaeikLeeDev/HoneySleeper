@@ -545,11 +545,17 @@
             "Type": "TextArea",
             "Name": "textAreaHour",
             "X": 187,
-            "Y": 112,
+            "Y": 132,
             "Width": 51,
             "Height": 49,
             "TextId": "__SingleUse_IHJ1",
             "TextRotation": "0",
+            "Color": {
+              "Red": 17,
+              "Green": 17,
+              "Blue": 17
+            },
+            "Alpha": 230,
             "AutoSize": true,
             "Wildcard1": {
               "TextId": "__SingleUse_S8H4",
@@ -561,11 +567,17 @@
             "Type": "TextArea",
             "Name": "textAreaMinute",
             "X": 259,
-            "Y": 112,
+            "Y": 132,
             "Width": 51,
             "Height": 49,
             "TextId": "__SingleUse_PT0B",
             "TextRotation": "0",
+            "Color": {
+              "Red": 17,
+              "Green": 17,
+              "Blue": 17
+            },
+            "Alpha": 230,
             "AutoSize": true,
             "Wildcard1": {
               "TextId": "__SingleUse_4JX4",
@@ -577,18 +589,24 @@
             "Type": "TextArea",
             "Name": "colon",
             "X": 240,
-            "Y": 108,
+            "Y": 128,
             "Width": 18,
             "Height": 49,
             "TextId": "__SingleUse_SKS2",
             "TextRotation": "0",
+            "Color": {
+              "Red": 17,
+              "Green": 17,
+              "Blue": 17
+            },
+            "Alpha": 230,
             "AutoSize": true
           },
           {
             "Type": "Button",
             "Name": "buttonHourDown",
             "X": 196,
-            "Y": 172,
+            "Y": 192,
             "Width": 32,
             "Height": 19,
             "Pressed": "Down_arrow_pressed.png",
@@ -598,7 +616,7 @@
             "Type": "Button",
             "Name": "buttonHourUp",
             "X": 196,
-            "Y": 83,
+            "Y": 103,
             "Width": 32,
             "Height": 19,
             "Pressed": "Up_arrow_pressed.png",
@@ -608,7 +626,7 @@
             "Type": "Button",
             "Name": "buttonMinUp",
             "X": 268,
-            "Y": 83,
+            "Y": 103,
             "Width": 32,
             "Height": 19,
             "Pressed": "Up_arrow_pressed.png",
@@ -618,11 +636,22 @@
             "Type": "Button",
             "Name": "buttonMinDown",
             "X": 268,
-            "Y": 172,
+            "Y": 192,
             "Width": 32,
             "Height": 19,
             "Pressed": "Down_arrow_pressed.png",
             "Released": "Down_arrow.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 165,
+            "Y": 3,
+            "Width": 173,
+            "Height": 25,
+            "TextId": "__SingleUse_QCCC",
+            "TextRotation": "0",
+            "AutoSize": true
           }
         ],
         "Interactions": [
