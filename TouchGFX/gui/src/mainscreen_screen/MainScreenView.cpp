@@ -40,9 +40,18 @@ void MainScreenView::updateLightImg(bool turnLightOn)
 	MainScreenViewBase::imgSwitchOff.invalidate();
 }
 
+void MainScreenView::updateDigitalClock(int digitalHours, int digitalMinutes, int digitalSeconds)
+{
+	// Update the clock
+	MainScreenView::digitalHours = digitalHours;
+	MainScreenView::digitalMinutes = digitalMinutes;
+	MainScreenView::digitalSeconds = digitalSeconds;
+	digitalClock.setTime24Hour(digitalHours, digitalMinutes, digitalSeconds);
+}
+
 void MainScreenView::digitalClockClickHandler(const DigitalClock& dc, const ClickEvent& e)
 {
 	if (&dc == &digitalClock) {
-
+		application().gotoSetClockScreenScreenSlideTransitionNorth();
 	}
 }

@@ -5,6 +5,15 @@
         "Name": "MainScreen",
         "Components": [
           {
+            "Type": "Button",
+            "Name": "buttonGoToSetClockScreen",
+            "Width": 170,
+            "Height": 60,
+            "Pressed": "__designer\\Blue_Buttons_Round_Edge_small_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Round_Edge_small.png",
+            "Style": "Style4"
+          },
+          {
             "Type": "Image",
             "Name": "background",
             "Width": 480,
@@ -171,6 +180,19 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "buttonLightOffClicked"
+            }
+          },
+          {
+            "InteractionName": "GoToSetClockScreen",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonGoToSetClockScreen"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "North",
+              "ActionComponent": "SetClockScreen"
             }
           }
         ]
@@ -459,6 +481,217 @@
               "ScreenTransitionType": "ScreenTransitionSlide",
               "ScreenTransitionDirection": "North",
               "ActionComponent": "MainScreen"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "SetClockScreen",
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "background",
+            "Width": 480,
+            "Height": 272,
+            "RelativeFilename": "background_SetClockScreen.png"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonCancel",
+            "X": 14,
+            "Y": 7,
+            "Width": 44,
+            "Height": 17,
+            "Pressed": "buttonCancelDonePressed.png",
+            "Released": "buttonCancelDoneReleased.png",
+            "Alpha": 230,
+            "TextId": "__SingleUse_JKH1",
+            "ReleasedColor": {
+              "Red": 51,
+              "Green": 51,
+              "Blue": 51
+            },
+            "PressedColor": {
+              "Red": 17,
+              "Green": 17,
+              "Blue": 17
+            },
+            "TextRotation": "0"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonDone",
+            "X": 421,
+            "Y": 7,
+            "Width": 44,
+            "Height": 17,
+            "Pressed": "buttonCancelDonePressed.png",
+            "Released": "buttonCancelDoneReleased.png",
+            "Alpha": 230,
+            "TextId": "__SingleUse_LCDY",
+            "ReleasedColor": {
+              "Red": 51,
+              "Green": 51,
+              "Blue": 51
+            },
+            "PressedColor": {
+              "Red": 17,
+              "Green": 17,
+              "Blue": 17
+            },
+            "TextRotation": "0"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaHour",
+            "X": 187,
+            "Y": 112,
+            "Width": 51,
+            "Height": 49,
+            "TextId": "__SingleUse_IHJ1",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_S8H4",
+              "UseBuffer": true,
+              "BufferSize": 3
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaMinute",
+            "X": 259,
+            "Y": 112,
+            "Width": 51,
+            "Height": 49,
+            "TextId": "__SingleUse_PT0B",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_4JX4",
+              "UseBuffer": true,
+              "BufferSize": 3
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "colon",
+            "X": 240,
+            "Y": 108,
+            "Width": 18,
+            "Height": 49,
+            "TextId": "__SingleUse_SKS2",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "Button",
+            "Name": "buttonHourDown",
+            "X": 196,
+            "Y": 172,
+            "Width": 32,
+            "Height": 19,
+            "Pressed": "Down_arrow_pressed.png",
+            "Released": "Down_arrow.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "buttonHourUp",
+            "X": 196,
+            "Y": 83,
+            "Width": 32,
+            "Height": 19,
+            "Pressed": "Up_arrow_pressed.png",
+            "Released": "Up_arrow.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "buttonMinUp",
+            "X": 268,
+            "Y": 83,
+            "Width": 32,
+            "Height": 19,
+            "Pressed": "Up_arrow_pressed.png",
+            "Released": "Up_arrow.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "buttonMinDown",
+            "X": 268,
+            "Y": 172,
+            "Width": 32,
+            "Height": 19,
+            "Pressed": "Down_arrow_pressed.png",
+            "Released": "Down_arrow.png"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "ReturnToMain",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonCancel"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "South",
+              "ActionComponent": "MainScreen"
+            }
+          },
+          {
+            "InteractionName": "HourUp",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonHourUp"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "buttonHourUpClicked"
+            }
+          },
+          {
+            "InteractionName": "HourDown",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonHourDown"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "buttonHouwDownClicked"
+            }
+          },
+          {
+            "InteractionName": "MinUp",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonMinUp"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "buttonMinUpClicked"
+            }
+          },
+          {
+            "InteractionName": "MinDown",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonMinDown"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "buttonMinDownClicked"
+            }
+          },
+          {
+            "InteractionName": "Done",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonDone"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "buttonDoneClicked"
             }
           }
         ]

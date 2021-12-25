@@ -58,10 +58,31 @@
     <Text Id="__SingleUse_HMRZ" TypographyId="DigitalClock" Alignment="Center" Direction="LTR">
       <Translation Language="GB">&lt;&gt;</Translation>
     </Text>
+    <Text Id="__SingleUse_JKH1" TypographyId="CancelDoneButton" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Cancel</Translation>
+    </Text>
+    <Text Id="__SingleUse_LCDY" TypographyId="CancelDoneButton" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Done</Translation>
+    </Text>
+    <Text Id="__SingleUse_IHJ1" TypographyId="Large" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">&lt;value&gt;</Translation>
+    </Text>
+    <Text Id="__SingleUse_S8H4" TypographyId="Large" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">00</Translation>
+    </Text>
+    <Text Id="__SingleUse_PT0B" TypographyId="Large" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">&lt;value&gt;</Translation>
+    </Text>
+    <Text Id="__SingleUse_4JX4" TypographyId="Large" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">00</Translation>
+    </Text>
+    <Text Id="__SingleUse_SKS2" TypographyId="Large" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">:</Translation>
+    </Text>
   </Texts>
   <Typographies>
     <Typography Id="Default" Font="verdana.ttf" Size="20" Bpp="4" FallbackCharacter="?" />
-    <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" FallbackCharacter="?" />
+    <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" FallbackCharacter="?" WildcardCharacterRanges="0-9" />
     <Typography Id="Small" Font="verdana.ttf" Size="10" Bpp="4" FallbackCharacter="?" />
     <Typography Id="LightButton" Font="verdana.ttf" Size="10" Bpp="4" FallbackCharacter="?" />
     <Typography Id="InBoxText" Font="verdana.ttf" Size="15" Bpp="4" FallbackCharacter="?" />

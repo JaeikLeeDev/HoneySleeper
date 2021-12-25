@@ -22,11 +22,16 @@ public:
 
     void gotoMainScreenScreenSlideTransitionNorth();
 
+    void gotoMainScreenScreenSlideTransitionSouth();
+
     // WakeupSettingScreen
     void gotoWakeupSettingScreenScreenSlideTransitionEast();
 
     // SleepStartScreen
     void gotoSleepStartScreenScreenSlideTransitionSouth();
+
+    // SetClockScreen
+    void gotoSetClockScreenScreenSlideTransitionNorth();
 
 protected:
     touchgfx::Callback<FrontendApplicationBase> transitionCallback;
@@ -40,11 +45,16 @@ protected:
 
     void gotoMainScreenScreenSlideTransitionNorthImpl();
 
+    void gotoMainScreenScreenSlideTransitionSouthImpl();
+
     // WakeupSettingScreen
     void gotoWakeupSettingScreenScreenSlideTransitionEastImpl();
 
     // SleepStartScreen
     void gotoSleepStartScreenScreenSlideTransitionSouthImpl();
+
+    // SetClockScreen
+    void gotoSetClockScreenScreenSlideTransitionNorthImpl();
 };
 
 #endif // FRONTENDAPPLICATIONBASE_HPP

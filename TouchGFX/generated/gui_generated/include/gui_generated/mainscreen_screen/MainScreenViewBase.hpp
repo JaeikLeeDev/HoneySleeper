@@ -8,9 +8,9 @@
 #include <mvp/View.hpp>
 #include <gui/mainscreen_screen/MainScreenPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
+#include <touchgfx/widgets/Button.hpp>
 #include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
-#include <touchgfx/widgets/Button.hpp>
 #include <touchgfx/containers/clock/DigitalClock.hpp>
 #include <touchgfx/mixins/ClickListener.hpp>
 
@@ -43,6 +43,7 @@ protected:
      * Member Declarations
      */
     touchgfx::Box __background;
+    touchgfx::Button buttonGoToSetClockScreen;
     touchgfx::Image background;
     touchgfx::ButtonWithLabel buttonLightOff;
     touchgfx::ButtonWithLabel buttonLightOn;

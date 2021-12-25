@@ -10,6 +10,8 @@ public:
     
     virtual ~ModelListener() {}
 
+    virtual void updateDigitalClock(int digitalHours, int digitalMinutes, int digitalSeconds) {}
+
     void bind(Model* m)
     {
         model = m;

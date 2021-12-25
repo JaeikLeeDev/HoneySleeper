@@ -18,7 +18,16 @@ public:
     void saveLightIsOn(bool lightIsOn);
     bool getLightIsOn();
     void switchLight(bool turnLightOn);
+    int getCurrentHour();
+    int getCurrentMinute();
+    int getCurrentSecond();
+    void setCurrentTime(int hour, int minute);
+    void updateDigitalClock(int digitalHours, int digitalMinutes, int digitalSeconds);
 protected:
+    int tickCounter;
+    int digitalHours;
+    int digitalMinutes;
+    int digitalSeconds;
     ModelListener* modelListener;
     bool lightIsOn;
 };

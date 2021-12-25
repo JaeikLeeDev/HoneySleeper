@@ -13,6 +13,10 @@ MainScreenViewBase::MainScreenViewBase() :
     __background.setPosition(0, 0, 480, 272);
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
 
+    buttonGoToSetClockScreen.setXY(0, 0);
+    buttonGoToSetClockScreen.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
+    buttonGoToSetClockScreen.setAction(buttonCallback);
+
     background.setXY(0, 0);
     background.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND_MAINSCREEN_ID));
 
@@ -59,6 +63,7 @@ MainScreenViewBase::MainScreenViewBase() :
     digitalClock.setTime24Hour(10, 10, 0);
 
     add(__background);
+    add(buttonGoToSetClockScreen);
     add(background);
     add(buttonLightOff);
     add(buttonLightOn);
@@ -76,7 +81,14 @@ void MainScreenViewBase::setupScreen()
 
 void MainScreenViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
 {
-    if (&src == &buttonLightOff)
+    if (&src == &buttonGoToSetClockScreen)
+    {
+        //GoToSetClockScreen
+        //When buttonGoToSetClockScreen clicked change screen to SetClockScreen
+        //Go to SetClockScreen with screen transition towards North
+        application().gotoSetClockScreenScreenSlideTransitionNorth();
+    }
+    else if (&src == &buttonLightOff)
     {
         //LightOff
         //When buttonLightOff clicked call virtual function

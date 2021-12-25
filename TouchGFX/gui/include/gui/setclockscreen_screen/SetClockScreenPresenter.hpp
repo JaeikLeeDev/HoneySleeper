@@ -1,17 +1,17 @@
-#ifndef MAINSCREENPRESENTER_HPP
-#define MAINSCREENPRESENTER_HPP
+#ifndef SETCLOCKSCREENPRESENTER_HPP
+#define SETCLOCKSCREENPRESENTER_HPP
 
 #include <gui/model/ModelListener.hpp>
 #include <mvp/Presenter.hpp>
 
 using namespace touchgfx;
 
-class MainScreenView;
+class SetClockScreenView;
 
-class MainScreenPresenter : public touchgfx::Presenter, public ModelListener
+class SetClockScreenPresenter : public touchgfx::Presenter, public ModelListener
 {
 public:
-    MainScreenPresenter(MainScreenView& v);
+    SetClockScreenPresenter(SetClockScreenView& v);
 
     /**
      * The activate function is called automatically when this screen is "switched in"
@@ -25,19 +25,15 @@ public:
      */
     virtual void deactivate();
 
-    virtual ~MainScreenPresenter() {};
-
-    void switchLight(bool turnLightOn);
+    virtual ~SetClockScreenPresenter() {};
 
     int getCurrentHour();
     int getCurrentMinute();
-    int getCurrentSecond();
-    virtual void updateDigitalClock(int digitalHours, int digitalMinutes, int digitalSeconds);
-
+    void setCurrentTime(int hour, int minute);
 private:
-    MainScreenPresenter();
+    SetClockScreenPresenter();
 
-    MainScreenView& view;
+    SetClockScreenView& view;
 };
 
-#endif // MAINSCREENPRESENTER_HPP
+#endif // SETCLOCKSCREENPRESENTER_HPP

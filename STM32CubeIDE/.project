@@ -335,6 +335,16 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/model/Model.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/gui/SetClockScreenPresenter.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/setclockscreen_screen/SetClockScreenPresenter.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/SetClockScreenView.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/setclockscreen_screen/SetClockScreenView.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/gui/SleepStartScreenPresenter.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/sleepstartscreen_screen/SleepStartScreenPresenter.cpp</locationURI>
@@ -460,6 +470,11 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/mainscreen_screen/MainScreenViewBase.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/SetClockScreenViewBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/setclockscreen_screen/SetClockScreenViewBase.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/SleepStartScreenViewBase.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/sleepstartscreen_screen/SleepStartScreenViewBase.cpp</locationURI>
@@ -475,6 +490,16 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/BitmapDatabase.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/image_Blue_Buttons_Round_Edge_small.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__designer/image_Blue_Buttons_Round_Edge_small.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_Blue_Buttons_Round_Edge_small_pressed.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__designer/image_Blue_Buttons_Round_Edge_small_pressed.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/image_Blue_Togglebars_Toggle_round_large_button_OFF.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__designer/image_Blue_Togglebars_Toggle_round_large_button_OFF.cpp</locationURI>
@@ -485,9 +510,34 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__designer/image_Blue_Togglebars_Toggle_round_large_button_ON.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/image_Down_arrow.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_Down_arrow.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_Down_arrow_pressed.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_Down_arrow_pressed.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_Up_arrow.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_Up_arrow.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_Up_arrow_pressed.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_Up_arrow_pressed.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/image_background_MainScreen.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_background_MainScreen.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_background_SetClockScreen.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_background_SetClockScreen.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_background_sleepStartScreen.cpp</name>
