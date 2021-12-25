@@ -1,6 +1,8 @@
 #include <gui/mainscreen_screen/MainScreenView.hpp>
 
-MainScreenView::MainScreenView() : lightIsOn(true)
+MainScreenView::MainScreenView() :
+	lightIsOn(true),
+	digitalClockClickedCallback(this, &MainScreenView::digitalClockClickHandler)
 {
 
 }
@@ -8,6 +10,7 @@ MainScreenView::MainScreenView() : lightIsOn(true)
 void MainScreenView::setupScreen()
 {
     MainScreenViewBase::setupScreen();
+    digitalClock.setClickAction(digitalClockClickedCallback);
 }
 
 void MainScreenView::tearDownScreen()
@@ -35,4 +38,11 @@ void MainScreenView::updateLightImg(bool turnLightOn)
 	MainScreenViewBase::imgSwitchOff.setVisible(!turnLightOn);
 	MainScreenViewBase::imgSwitchOn.invalidate();
 	MainScreenViewBase::imgSwitchOff.invalidate();
+}
+
+void MainScreenView::digitalClockClickHandler(const DigitalClock& dc, const ClickEvent& e)
+{
+	if (&dc == &digitalClock) {
+
+	}
 }

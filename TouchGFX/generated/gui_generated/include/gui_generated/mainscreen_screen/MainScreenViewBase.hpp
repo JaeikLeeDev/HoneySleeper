@@ -11,6 +11,8 @@
 #include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
 #include <touchgfx/widgets/Button.hpp>
+#include <touchgfx/containers/clock/DigitalClock.hpp>
+#include <touchgfx/mixins/ClickListener.hpp>
 
 class MainScreenViewBase : public touchgfx::View<MainScreenPresenter>
 {
@@ -48,6 +50,7 @@ protected:
     touchgfx::Image imgSwitchOn;
     touchgfx::ButtonWithLabel buttonSleepStart;
     touchgfx::Button buttonWakeupInfo;
+    touchgfx::ClickListener< touchgfx::DigitalClock > digitalClock;
 
 private:
 

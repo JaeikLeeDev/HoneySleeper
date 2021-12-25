@@ -15,7 +15,9 @@ public:
     virtual void buttonLightOnClicked();
     virtual void buttonLightOffClicked();
     void updateLightImg(bool turnLightOn);
+    void digitalClockClickHandler(const DigitalClock& dc, const ClickEvent& e);
 protected:
+    Callback<MainScreenView, const DigitalClock&, const ClickEvent&> digitalClockClickedCallback;
     bool lightIsOn;
 };
 

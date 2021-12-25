@@ -108,6 +108,20 @@
             "Height": 207,
             "Pressed": "wakeupSettingInfo.png",
             "Released": "wakeupSettingInfo.png"
+          },
+          {
+            "Type": "DigitalClock",
+            "Name": "digitalClock",
+            "X": 200,
+            "Y": 4,
+            "Width": 80,
+            "Height": 20,
+            "TextId": "__SingleUse_HMRZ",
+            "DisplaySeconds": true,
+            "DisplayLeadingZeroForHourIndicator": true,
+            "InitialHour": 10,
+            "InitialMinute": 10,
+            "Clickable": true
           }
         ],
         "Interactions": [

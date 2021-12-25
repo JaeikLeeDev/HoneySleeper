@@ -51,6 +51,13 @@ MainScreenViewBase::MainScreenViewBase() :
     buttonWakeupInfo.setBitmaps(touchgfx::Bitmap(BITMAP_WAKEUPSETTINGINFO_ID), touchgfx::Bitmap(BITMAP_WAKEUPSETTINGINFO_ID));
     buttonWakeupInfo.setAction(buttonCallback);
 
+    digitalClock.setPosition(200, 4, 80, 20);
+    digitalClock.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    digitalClock.setTypedText(touchgfx::TypedText(T___SINGLEUSE_HMRZ));
+    digitalClock.displayLeadingZeroForHourIndicator(true);
+    digitalClock.setDisplayMode(touchgfx::DigitalClock::DISPLAY_24_HOUR);
+    digitalClock.setTime24Hour(10, 10, 0);
+
     add(__background);
     add(background);
     add(buttonLightOff);
@@ -59,6 +66,7 @@ MainScreenViewBase::MainScreenViewBase() :
     add(imgSwitchOn);
     add(buttonSleepStart);
     add(buttonWakeupInfo);
+    add(digitalClock);
 }
 
 void MainScreenViewBase::setupScreen()
