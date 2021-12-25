@@ -18,17 +18,21 @@ void MainScreenView::tearDownScreen()
 void MainScreenView::buttonLightOnClicked()
 {
 	lightIsOn = true;
-	MainScreenViewBase::imgSwitchOn.setVisible(true);
-	MainScreenViewBase::imgSwitchOff.setVisible(false);
-	MainScreenViewBase::imgSwitchOn.invalidate();
-	MainScreenViewBase::imgSwitchOff.invalidate();
+	presenter->switchLight(lightIsOn);
+	updateLightImg(lightIsOn);
 }
 
 void MainScreenView::buttonLightOffClicked()
 {
 	lightIsOn = false;
-	MainScreenViewBase::imgSwitchOn.setVisible(false);
-	MainScreenViewBase::imgSwitchOff.setVisible(true);
+	presenter->switchLight(lightIsOn);
+	updateLightImg(lightIsOn);
+}
+
+void MainScreenView::updateLightImg(bool turnLightOn)
+{
+	MainScreenViewBase::imgSwitchOn.setVisible(turnLightOn);
+	MainScreenViewBase::imgSwitchOff.setVisible(!turnLightOn);
 	MainScreenViewBase::imgSwitchOn.invalidate();
 	MainScreenViewBase::imgSwitchOff.invalidate();
 }

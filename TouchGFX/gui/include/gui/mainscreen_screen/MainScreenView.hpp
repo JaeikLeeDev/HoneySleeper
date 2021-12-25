@@ -14,6 +14,7 @@ public:
 
     virtual void buttonLightOnClicked();
     virtual void buttonLightOffClicked();
+    void updateLightImg(bool turnLightOn);
 protected:
     bool lightIsOn;
 };
