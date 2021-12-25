@@ -14,8 +14,12 @@ public:
     }
 
     void tick();
+
+    void saveLightIsOn(bool lightIsOn);
+    bool getLightIsOn();
 protected:
     ModelListener* modelListener;
+    bool lightIsOn;
 };
 
 #endif // MODEL_HPP

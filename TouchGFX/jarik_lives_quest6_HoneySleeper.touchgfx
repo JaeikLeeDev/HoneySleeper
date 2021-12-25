@@ -59,7 +59,17 @@
           },
           {
             "Type": "Image",
-            "Name": "imgSwitch",
+            "Name": "imgSwitchOff",
+            "X": 91,
+            "Y": 70,
+            "Width": 86,
+            "Height": 42,
+            "Visible": false,
+            "RelativeFilename": "icon_light_off.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "imgSwitchOn",
             "X": 91,
             "Y": 70,
             "Width": 86,
@@ -125,6 +135,28 @@
               "ScreenTransitionType": "ScreenTransitionSlide",
               "ScreenTransitionDirection": "South",
               "ActionComponent": "SleepStartScreen"
+            }
+          },
+          {
+            "InteractionName": "LightOn",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonLightOn"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "buttonLightOnClicked"
+            }
+          },
+          {
+            "InteractionName": "LightOff",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonLightOff"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "buttonLightOffClicked"
             }
           }
         ]
@@ -202,7 +234,7 @@
             "Name": "textAreaAlarmUse",
             "X": 33,
             "Y": 198,
-            "Width": 195,
+            "Width": 206,
             "Height": 19,
             "TextId": "__SingleUse_FD14",
             "TextRotation": "0",

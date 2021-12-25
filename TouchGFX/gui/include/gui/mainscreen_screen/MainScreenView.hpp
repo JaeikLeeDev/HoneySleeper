@@ -11,7 +11,11 @@ public:
     virtual ~MainScreenView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+
+    virtual void buttonLightOnClicked();
+    virtual void buttonLightOffClicked();
 protected:
+    bool lightIsOn;
 };
 
 #endif // MAINSCREENVIEW_HPP
