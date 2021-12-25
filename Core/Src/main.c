@@ -140,20 +140,7 @@ int main(void)
   MX_TIM5_Init();
   MX_TouchGFX_Init();
   /* USER CODE BEGIN 2 */
-//    HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_1); // Add PWM Servo Motor
-//    while (1) {
-//  	  //2ms Pwm - Servo motor arm rotates to 180 degree
-//  	  __HAL_TIM_SetCompare(&htim5, TIM_CHANNEL_1, 100);
-//  	  HAL_Delay(1000); // 1000ms
-//
-//  	  //1.5ms Pwm - Servo motor arm rotates to 90 degree
-//  	  __HAL_TIM_SetCompare(&htim5, TIM_CHANNEL_1, 75);
-//  	  HAL_Delay(1000); // 1000ms
-//
-//  	  //1ms Pwm - Servo motor arm rotates to 0 degree
-//  	  __HAL_TIM_SetCompare(&htim5, TIM_CHANNEL_1, 50);
-//  	  HAL_Delay(1000); // 1000ms
-//    }
+  HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_1); // Add PWM Servo Motor
   /* USER CODE END 2 */
 
   /* Init scheduler */
@@ -657,7 +644,15 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-
+void main_switch_light_on(uint8_t turn_light_on)
+{
+	if (turn_light_on) {
+		__HAL_TIM_SetCompare(&htim5, TIM_CHANNEL_1, 70);
+	}
+	else {
+		__HAL_TIM_SetCompare(&htim5, TIM_CHANNEL_1, 85);
+	}
+}
 /* USER CODE END 4 */
 
 /* USER CODE BEGIN Header_StartDefaultTask */

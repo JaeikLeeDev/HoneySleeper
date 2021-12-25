@@ -56,7 +56,7 @@ void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
 void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
-
+void main_switch_light_on(uint8_t turn_light_on);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/

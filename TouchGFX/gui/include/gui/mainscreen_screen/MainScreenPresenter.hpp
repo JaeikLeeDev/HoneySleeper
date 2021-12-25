@@ -27,6 +27,8 @@ public:
 
     virtual ~MainScreenPresenter() {};
 
+    void switchLight(bool turnLightOn);
+
 private:
     MainScreenPresenter();
 

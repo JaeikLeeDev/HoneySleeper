@@ -22,6 +22,7 @@ MainScreenViewBase::MainScreenViewBase() :
     buttonLightOff.setLabelColor(touchgfx::Color::getColorFromRGB(51, 51, 51));
     buttonLightOff.setLabelColorPressed(touchgfx::Color::getColorFromRGB(17, 17, 17));
     buttonLightOff.setAlpha(230);
+    buttonLightOff.setAction(buttonCallback);
 
     buttonLightOn.setXY(187, 68);
     buttonLightOn.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTONLIGHTONRELEASED_ID), touchgfx::Bitmap(BITMAP_BUTTONLIGHTONPRESSED_ID));
@@ -29,9 +30,14 @@ MainScreenViewBase::MainScreenViewBase() :
     buttonLightOn.setLabelColor(touchgfx::Color::getColorFromRGB(51, 51, 51));
     buttonLightOn.setLabelColorPressed(touchgfx::Color::getColorFromRGB(17, 17, 17));
     buttonLightOn.setAlpha(230);
+    buttonLightOn.setAction(buttonCallback);
 
-    imgSwitch.setXY(91, 70);
-    imgSwitch.setBitmap(touchgfx::Bitmap(BITMAP_ICON_LIGHT_ON_ID));
+    imgSwitchOff.setXY(91, 70);
+    imgSwitchOff.setVisible(false);
+    imgSwitchOff.setBitmap(touchgfx::Bitmap(BITMAP_ICON_LIGHT_OFF_ID));
+
+    imgSwitchOn.setXY(91, 70);
+    imgSwitchOn.setBitmap(touchgfx::Bitmap(BITMAP_ICON_LIGHT_ON_ID));
 
     buttonSleepStart.setXY(41, 186);
     buttonSleepStart.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTONSLEEPSTARTRELEASED_ID), touchgfx::Bitmap(BITMAP_BUTTONSLEEPSTARTPRESSED_ID));
@@ -49,7 +55,8 @@ MainScreenViewBase::MainScreenViewBase() :
     add(background);
     add(buttonLightOff);
     add(buttonLightOn);
-    add(imgSwitch);
+    add(imgSwitchOff);
+    add(imgSwitchOn);
     add(buttonSleepStart);
     add(buttonWakeupInfo);
 }
@@ -61,7 +68,21 @@ void MainScreenViewBase::setupScreen()
 
 void MainScreenViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
 {
-    if (&src == &buttonSleepStart)
+    if (&src == &buttonLightOff)
+    {
+        //LightOff
+        //When buttonLightOff clicked call virtual function
+        //Call buttonLightOffClicked
+        buttonLightOffClicked();
+    }
+    else if (&src == &buttonLightOn)
+    {
+        //LightOn
+        //When buttonLightOn clicked call virtual function
+        //Call buttonLightOnClicked
+        buttonLightOnClicked();
+    }
+    else if (&src == &buttonSleepStart)
     {
         //GoToSleepStart
         //When buttonSleepStart clicked change screen to SleepStartScreen

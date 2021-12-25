@@ -19,6 +19,19 @@ public:
     virtual ~MainScreenViewBase() {}
     virtual void setupScreen();
 
+    /*
+     * Virtual Action Handlers
+     */
+    virtual void buttonLightOnClicked()
+    {
+        // Override and implement this function in MainScreen
+    }
+
+    virtual void buttonLightOffClicked()
+    {
+        // Override and implement this function in MainScreen
+    }
+
 protected:
     FrontendApplication& application() {
         return *static_cast<FrontendApplication*>(touchgfx::Application::getInstance());
@@ -31,7 +44,8 @@ protected:
     touchgfx::Image background;
     touchgfx::ButtonWithLabel buttonLightOff;
     touchgfx::ButtonWithLabel buttonLightOn;
-    touchgfx::Image imgSwitch;
+    touchgfx::Image imgSwitchOff;
+    touchgfx::Image imgSwitchOn;
     touchgfx::ButtonWithLabel buttonSleepStart;
     touchgfx::Button buttonWakeupInfo;
 

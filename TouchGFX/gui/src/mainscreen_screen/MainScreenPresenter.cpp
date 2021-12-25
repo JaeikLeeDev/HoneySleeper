@@ -16,3 +16,8 @@ void MainScreenPresenter::deactivate()
 {
 
 }
+
+void MainScreenPresenter::switchLight(bool turnLightOn)
+{
+	model->switchLight(turnLightOn);
+}
