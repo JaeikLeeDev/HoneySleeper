@@ -190,17 +190,11 @@
     <Filter Include="Source Files\gui\wakeupsettingscreen_screen">
       <UniqueIdentifier>77231900-0DA2-9768-897F-4A10CB16E571</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\generated\gui_generated\containers">
-      <UniqueIdentifier>73F5196D-7E76-5F9D-5458-522ACF91E030</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\generated\gui_generated\wakeupsettingscreen_screen">
       <UniqueIdentifier>C72A6C65-1BE9-6F33-BA86-FD100C8AAE8C</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\generated\gui_generated\wakeupsettingscreen_screen">
       <UniqueIdentifier>D4CDD188-B191-C80C-2151-28357FB65A92</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\containers">
-      <UniqueIdentifier>8D5E89FD-D2DA-FFBB-C2C8-5C749B191AC5</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\gui\sleepstartscreen_screen">
       <UniqueIdentifier>B9418C01-0628-6C5D-D6A5-30E3CC219402</UniqueIdentifier>

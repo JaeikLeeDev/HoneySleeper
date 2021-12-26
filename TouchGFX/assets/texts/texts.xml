@@ -32,13 +32,7 @@
       <Translation Language="GB">Cancel</Translation>
     </Text>
     <Text Id="__SingleUse_U0K9" TypographyId="MSmallWildcard" Alignment="Center" Direction="LTR">
-      <Translation Language="GB">Wake up at &lt;value&gt;:&lt;value&gt;</Translation>
-    </Text>
-    <Text Id="__SingleUse_3JJ3" TypographyId="MSmallWildcard" Alignment="Left" Direction="LTR">
-      <Translation Language="GB">00</Translation>
-    </Text>
-    <Text Id="__SingleUse_ID00" TypographyId="MSmallWildcard" Alignment="Left" Direction="LTR">
-      <Translation Language="GB">00</Translation>
+      <Translation Language="GB">Wake up at</Translation>
     </Text>
     <Text Id="__SingleUse_91MP" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Hope your honey sleep!</Translation>
@@ -89,6 +83,12 @@
       <Translation Language="GB">Set Timer</Translation>
     </Text>
     <Text Id="__SingleUse_FEWJ" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">&lt;&gt;</Translation>
+    </Text>
+    <Text Id="__SingleUse_4ZIE" TypographyId="MSmallWildcard" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">&lt;&gt;</Translation>
+    </Text>
+    <Text Id="__SingleUse_UODD" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">&lt;&gt;</Translation>
     </Text>
   </Texts>

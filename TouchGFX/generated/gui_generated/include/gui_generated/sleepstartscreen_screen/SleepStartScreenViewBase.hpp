@@ -11,7 +11,7 @@
 #include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
-#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
+#include <touchgfx/containers/clock/DigitalClock.hpp>
 
 class SleepStartScreenViewBase : public touchgfx::View<SleepStartScreenPresenter>
 {
@@ -32,15 +32,9 @@ protected:
     touchgfx::Image background;
     touchgfx::ButtonWithLabel buttonCancel;
     touchgfx::TextArea textAreaHope;
-    touchgfx::TextAreaWithTwoWildcards textAreaWakeupAt;
-
-    /*
-     * Wildcard Buffers
-     */
-    static const uint16_t TEXTAREAWAKEUPATBUFFER1_SIZE = 3;
-    touchgfx::Unicode::UnicodeChar textAreaWakeupAtBuffer1[TEXTAREAWAKEUPATBUFFER1_SIZE];
-    static const uint16_t TEXTAREAWAKEUPATBUFFER2_SIZE = 3;
-    touchgfx::Unicode::UnicodeChar textAreaWakeupAtBuffer2[TEXTAREAWAKEUPATBUFFER2_SIZE];
+    touchgfx::TextArea textAreaWakeupAt;
+    touchgfx::DigitalClock digitalClock;
+    touchgfx::DigitalClock digitalClockWakeupTime_1;
 
 private:
 

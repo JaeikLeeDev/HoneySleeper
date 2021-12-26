@@ -30,22 +30,34 @@ SleepStartScreenViewBase::SleepStartScreenViewBase() :
     textAreaHope.setAlpha(230);
     textAreaHope.setTypedText(touchgfx::TypedText(T___SINGLEUSE_91MP));
 
-    textAreaWakeupAt.setXY(173, 95);
+    textAreaWakeupAt.setXY(158, 95);
     textAreaWakeupAt.setColor(touchgfx::Color::getColorFromRGB(17, 17, 17));
     textAreaWakeupAt.setLinespacing(0);
     textAreaWakeupAt.setAlpha(230);
-    touchgfx::Unicode::snprintf(textAreaWakeupAtBuffer1, TEXTAREAWAKEUPATBUFFER1_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_3JJ3).getText());
-    textAreaWakeupAt.setWildcard1(textAreaWakeupAtBuffer1);
-    touchgfx::Unicode::snprintf(textAreaWakeupAtBuffer2, TEXTAREAWAKEUPATBUFFER2_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_ID00).getText());
-    textAreaWakeupAt.setWildcard2(textAreaWakeupAtBuffer2);
-    textAreaWakeupAt.resizeToCurrentText();
     textAreaWakeupAt.setTypedText(touchgfx::TypedText(T___SINGLEUSE_U0K9));
+
+    digitalClock.setPosition(200, 4, 80, 20);
+    digitalClock.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    digitalClock.setTypedText(touchgfx::TypedText(T___SINGLEUSE_4ZIE));
+    digitalClock.displayLeadingZeroForHourIndicator(true);
+    digitalClock.setDisplayMode(touchgfx::DigitalClock::DISPLAY_24_HOUR);
+    digitalClock.setTime24Hour(10, 10, 0);
+
+    digitalClockWakeupTime_1.setPosition(250, 92, 60, 25);
+    digitalClockWakeupTime_1.setColor(touchgfx::Color::getColorFromRGB(17, 17, 17));
+    digitalClockWakeupTime_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_UODD));
+    digitalClockWakeupTime_1.displayLeadingZeroForHourIndicator(true);
+    digitalClockWakeupTime_1.setDisplayMode(touchgfx::DigitalClock::DISPLAY_24_HOUR_NO_SECONDS);
+    digitalClockWakeupTime_1.setTime24Hour(8, 0, 0);
+    digitalClockWakeupTime_1.setAlpha(230);
 
     add(__background);
     add(background);
     add(buttonCancel);
     add(textAreaHope);
     add(textAreaWakeupAt);
+    add(digitalClock);
+    add(digitalClockWakeupTime_1);
 }
 
 void SleepStartScreenViewBase::setupScreen()

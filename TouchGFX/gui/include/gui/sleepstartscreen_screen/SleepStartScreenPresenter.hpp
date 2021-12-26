@@ -27,6 +27,8 @@ public:
 
     virtual ~SleepStartScreenPresenter() {};
 
+    virtual void updateDigitalClock(int digitalHours, int digitalMinutes, int digitalSeconds);
+
 private:
     SleepStartScreenPresenter();
 

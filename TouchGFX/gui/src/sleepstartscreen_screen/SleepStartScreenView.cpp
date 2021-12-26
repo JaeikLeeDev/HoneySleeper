@@ -14,3 +14,8 @@ void SleepStartScreenView::tearDownScreen()
 {
     SleepStartScreenViewBase::tearDownScreen();
 }
+
+void SleepStartScreenView::updateDigitalClock(int digitalHours, int digitalMinutes, int digitalSeconds)
+{
+	digitalClock.setTime24Hour(digitalHours, digitalMinutes, digitalSeconds);
+}

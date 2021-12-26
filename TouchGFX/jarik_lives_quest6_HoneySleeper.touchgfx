@@ -115,8 +115,14 @@
             "Y": 136,
             "Width": 80,
             "Height": 25,
+            "TextColor": {
+              "Red": 17,
+              "Green": 17,
+              "Blue": 17
+            },
             "TextId": "__SingleUse_FEWJ",
             "DisplayLeadingZeroForHourIndicator": true,
+            "Alpha": 230,
             "InitialHour": 8
           },
           {
@@ -128,6 +134,12 @@
             "Height": 25,
             "TextId": "__SingleUse_TU3R",
             "TextRotation": "0",
+            "Color": {
+              "Red": 17,
+              "Green": 17,
+              "Blue": 17
+            },
+            "Alpha": 230,
             "AutoSize": true
           },
           {
@@ -593,9 +605,9 @@
           {
             "Type": "TextArea",
             "Name": "textAreaWakeupAt",
-            "X": 173,
+            "X": 158,
             "Y": 95,
-            "Width": 135,
+            "Width": 85,
             "Height": 19,
             "TextId": "__SingleUse_U0K9",
             "TextRotation": "0",
@@ -605,17 +617,37 @@
               "Blue": 17
             },
             "Alpha": 230,
-            "AutoSize": true,
-            "Wildcard1": {
-              "TextId": "__SingleUse_3JJ3",
-              "UseBuffer": true,
-              "BufferSize": 3
+            "AutoSize": true
+          },
+          {
+            "Type": "DigitalClock",
+            "Name": "digitalClock",
+            "X": 200,
+            "Y": 4,
+            "Width": 80,
+            "Height": 20,
+            "TextId": "__SingleUse_4ZIE",
+            "DisplaySeconds": true,
+            "DisplayLeadingZeroForHourIndicator": true,
+            "InitialHour": 10,
+            "InitialMinute": 10
+          },
+          {
+            "Type": "DigitalClock",
+            "Name": "digitalClockWakeupTime_1",
+            "X": 250,
+            "Y": 92,
+            "Width": 60,
+            "Height": 25,
+            "TextColor": {
+              "Red": 17,
+              "Green": 17,
+              "Blue": 17
             },
-            "Wildcard2": {
-              "TextId": "__SingleUse_ID00",
-              "UseBuffer": true,
-              "BufferSize": 3
-            }
+            "TextId": "__SingleUse_UODD",
+            "DisplayLeadingZeroForHourIndicator": true,
+            "Alpha": 230,
+            "InitialHour": 8
           }
         ],
         "Interactions": [

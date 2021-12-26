@@ -52,15 +52,17 @@ MainScreenViewBase::MainScreenViewBase() :
     buttonSleepStart.setAction(buttonCallback);
 
     digitalClockWakeupTime.setPosition(321, 136, 80, 25);
-    digitalClockWakeupTime.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    digitalClockWakeupTime.setColor(touchgfx::Color::getColorFromRGB(17, 17, 17));
     digitalClockWakeupTime.setTypedText(touchgfx::TypedText(T___SINGLEUSE_FEWJ));
     digitalClockWakeupTime.displayLeadingZeroForHourIndicator(true);
     digitalClockWakeupTime.setDisplayMode(touchgfx::DigitalClock::DISPLAY_24_HOUR_NO_SECONDS);
     digitalClockWakeupTime.setTime24Hour(8, 0, 0);
+    digitalClockWakeupTime.setAlpha(230);
 
     textAreaSetTimer.setXY(312, 94);
-    textAreaSetTimer.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textAreaSetTimer.setColor(touchgfx::Color::getColorFromRGB(17, 17, 17));
     textAreaSetTimer.setLinespacing(0);
+    textAreaSetTimer.setAlpha(230);
     textAreaSetTimer.setTypedText(touchgfx::TypedText(T___SINGLEUSE_TU3R));
 
     buttonWakeupInfo.setXY(285, 33);

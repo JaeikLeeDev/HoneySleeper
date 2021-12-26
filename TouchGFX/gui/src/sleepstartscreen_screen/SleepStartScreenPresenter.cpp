@@ -16,3 +16,8 @@ void SleepStartScreenPresenter::deactivate()
 {
 
 }
+
+void SleepStartScreenPresenter::updateDigitalClock(int digitalHours, int digitalMinutes, int digitalSeconds)
+{
+	view.updateDigitalClock(digitalHours, digitalMinutes, digitalSeconds);
+}

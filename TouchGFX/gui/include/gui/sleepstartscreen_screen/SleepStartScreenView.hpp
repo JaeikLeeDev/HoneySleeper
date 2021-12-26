@@ -11,6 +11,10 @@ public:
     virtual ~SleepStartScreenView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+
+    void updateDigitalClock(int digitalHours, int digitalMinutes, int digitalSeconds);
+
+
 protected:
 };
 
