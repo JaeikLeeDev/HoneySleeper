@@ -36,6 +36,11 @@ public:
     int getWakeupHour();
     int getWakeupMinute();
 
+    bool getWakeupLightUse();
+    bool getWakeupAlarmUse();
+
+    void switchLight(bool turnLightOn);
+
 private:
     SleepStartScreenPresenter();
 

@@ -46,3 +46,18 @@ int SleepStartScreenPresenter::getWakeupMinute()
 {
 	return model->getWakeupMinute();
 }
+
+void SleepStartScreenPresenter::switchLight(bool turnLightOn)
+{
+	model->switchLight(turnLightOn);
+}
+
+bool SleepStartScreenPresenter::getWakeupLightUse()
+{
+	return model->getWakeupLightUse();
+}
+
+bool SleepStartScreenPresenter::getWakeupAlarmUse()
+{
+	return model->getWakeupAlarmUse();
+}

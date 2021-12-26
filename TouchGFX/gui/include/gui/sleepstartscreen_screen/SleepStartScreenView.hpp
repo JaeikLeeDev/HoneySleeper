@@ -19,6 +19,9 @@ protected:
     int digitalHours;
     int digitalMinutes;
     int digitalSeconds;
+
+    int wakeupHour;
+    int wakeupMinute;
 };
 
 #endif // SLEEPSTARTSCREENVIEW_HPP

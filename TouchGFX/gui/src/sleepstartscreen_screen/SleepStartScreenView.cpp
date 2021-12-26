@@ -11,7 +11,9 @@ void SleepStartScreenView::setupScreen()
     digitalClock.setTime24Hour(presenter->getCurrentHour(),
     						   presenter->getCurrentMinute(),
 							   presenter->getCurrentSecond());
-	digitalClockWakeupTime.setTime24Hour(presenter->getWakeupHour(), presenter->getWakeupMinute(), 0);
+    wakeupHour = presenter->getWakeupHour();
+    wakeupMinute = presenter->getWakeupMinute();
+	digitalClockWakeupTime.setTime24Hour(wakeupHour, wakeupMinute, 0);
 }
 
 void SleepStartScreenView::tearDownScreen()
@@ -29,5 +31,11 @@ void SleepStartScreenView::updateDigitalClock(int digitalHours, int digitalMinut
 
 void SleepStartScreenView::handleTickEvent()
 {
-
+	if (wakeupHour == digitalHours && wakeupMinute == digitalMinutes) {
+		presenter->switchLight(presenter->getWakeupLightUse());
+		if (presenter->getWakeupAlarmUse()) {
+			//TODO: play alarm
+		}
+		application().gotoMainScreenScreenSlideTransitionNorth();
+	}
 }
