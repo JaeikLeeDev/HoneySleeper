@@ -12,6 +12,7 @@
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/containers/clock/DigitalClock.hpp>
+#include <touchgfx/widgets/Button.hpp>
 
 class SleepStartScreenViewBase : public touchgfx::View<SleepStartScreenPresenter>
 {
@@ -19,6 +20,14 @@ public:
     SleepStartScreenViewBase();
     virtual ~SleepStartScreenViewBase() {}
     virtual void setupScreen();
+
+    /*
+     * Virtual Action Handlers
+     */
+    virtual void blackOutClicked()
+    {
+        // Override and implement this function in SleepStartScreen
+    }
 
 protected:
     FrontendApplication& application() {
@@ -35,6 +44,7 @@ protected:
     touchgfx::TextArea textAreaWakeupAt;
     touchgfx::DigitalClock digitalClock;
     touchgfx::DigitalClock digitalClockWakeupTime;
+    touchgfx::Button blackOut;
 
 private:
 

@@ -15,9 +15,9 @@ public:
 
     void tick();
 
-    void saveLightIsOn(bool lightIsOn);
     bool getLightIsOn();
     void switchLight(bool turnLightOn);
+    void switchDisplayOn(bool turnDisplayOn);
     int getCurrentHour();
     int getCurrentMinute();
     int getCurrentSecond();

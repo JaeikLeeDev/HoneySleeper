@@ -294,6 +294,7 @@
             "Y": 188,
             "Width": 128,
             "Height": 38,
+            "Visible": false,
             "Pressed": "__designer\\Blue_Togglebars_Toggle_round_large_button_ON.png",
             "Released": "__designer\\Blue_Togglebars_Toggle_round_large_button_OFF.png",
             "Alpha": 200,
@@ -306,6 +307,7 @@
             "Y": 198,
             "Width": 206,
             "Height": 19,
+            "Visible": false,
             "TextId": "__SingleUse_FD14",
             "TextRotation": "0",
             "Color": {
@@ -319,8 +321,8 @@
           {
             "Type": "ToggleButton",
             "Name": "toggleButtonLightUse",
-            "X": 249,
-            "Y": 131,
+            "X": 315,
+            "Y": 169,
             "Width": 128,
             "Height": 38,
             "Pressed": "__designer\\Blue_Togglebars_Toggle_round_large_button_ON.png",
@@ -332,9 +334,9 @@
             "Type": "TextArea",
             "Name": "textAreaLightUse",
             "X": 33,
-            "Y": 141,
-            "Width": 195,
-            "Height": 19,
+            "Y": 176,
+            "Width": 261,
+            "Height": 25,
             "TextId": "__SingleUse_N3EO",
             "TextRotation": "0",
             "Color": {
@@ -349,9 +351,9 @@
             "Type": "TextArea",
             "Name": "textAreaWakeupAt",
             "X": 33,
-            "Y": 85,
-            "Width": 85,
-            "Height": 19,
+            "Y": 96,
+            "Width": 113,
+            "Height": 25,
             "TextId": "__SingleUse_3IFJ",
             "TextRotation": "0",
             "Color": {
@@ -365,10 +367,10 @@
           {
             "Type": "TextArea",
             "Name": "textAreaHour",
-            "X": 129,
-            "Y": 86,
-            "Width": 19,
-            "Height": 19,
+            "X": 168,
+            "Y": 97,
+            "Width": 25,
+            "Height": 25,
             "TextId": "__SingleUse_PXFO",
             "TextRotation": "0",
             "Color": {
@@ -387,10 +389,10 @@
           {
             "Type": "TextArea",
             "Name": "textAreaMinute",
-            "X": 157,
-            "Y": 86,
-            "Width": 19,
-            "Height": 19,
+            "X": 215,
+            "Y": 96,
+            "Width": 25,
+            "Height": 25,
             "TextId": "__SingleUse_VP4A",
             "TextRotation": "0",
             "Color": {
@@ -409,54 +411,50 @@
           {
             "Type": "Button",
             "Name": "buttonMinDown",
-            "X": 159,
-            "Y": 106,
-            "Width": 13,
-            "Height": 7,
-            "Pressed": "buttonDownPressed.png",
-            "Released": "buttonDownReleased.png",
-            "Alpha": 200
+            "X": 211,
+            "Y": 124,
+            "Width": 32,
+            "Height": 19,
+            "Pressed": "Down_arrow_pressed.png",
+            "Released": "Down_arrow.png"
           },
           {
             "Type": "Button",
             "Name": "buttonMinUp",
-            "X": 159,
+            "X": 211,
             "Y": 77,
-            "Width": 13,
-            "Height": 7,
-            "Pressed": "buttonUpPressed.png",
-            "Released": "buttonUpReleased.png",
-            "Alpha": 200
+            "Width": 32,
+            "Height": 19,
+            "Pressed": "Up_arrow_pressed.png",
+            "Released": "Up_arrow.png"
           },
           {
             "Type": "Button",
             "Name": "buttonHourDown",
-            "X": 132,
-            "Y": 106,
-            "Width": 13,
-            "Height": 7,
-            "Pressed": "buttonDownPressed.png",
-            "Released": "buttonDownReleased.png",
-            "Alpha": 200
+            "X": 165,
+            "Y": 124,
+            "Width": 32,
+            "Height": 19,
+            "Pressed": "Down_arrow_pressed.png",
+            "Released": "Down_arrow.png"
           },
           {
             "Type": "Button",
             "Name": "buttonHourUp",
-            "X": 132,
-            "Y": 76,
-            "Width": 13,
-            "Height": 7,
-            "Pressed": "buttonUpPressed.png",
-            "Released": "buttonUpReleased.png",
-            "Alpha": 200
+            "X": 165,
+            "Y": 77,
+            "Width": 32,
+            "Height": 19,
+            "Pressed": "Up_arrow_pressed.png",
+            "Released": "Up_arrow.png"
           },
           {
             "Type": "TextArea",
             "Name": "textAreaColon",
-            "X": 149,
-            "Y": 84,
-            "Width": 7,
-            "Height": 19,
+            "X": 200,
+            "Y": 94,
+            "Width": 9,
+            "Height": 25,
             "TextId": "__SingleUse_TBGZ",
             "TextRotation": "0",
             "Color": {
@@ -648,6 +646,15 @@
             "DisplayLeadingZeroForHourIndicator": true,
             "Alpha": 230,
             "InitialHour": 8
+          },
+          {
+            "Type": "Button",
+            "Name": "blackOut",
+            "Width": 480,
+            "Height": 272,
+            "Visible": false,
+            "Pressed": "blackOut.png",
+            "Released": "blackOut.png"
           }
         ],
         "Interactions": [
@@ -662,6 +669,17 @@
               "ScreenTransitionType": "ScreenTransitionSlide",
               "ScreenTransitionDirection": "North",
               "ActionComponent": "MainScreen"
+            }
+          },
+          {
+            "InteractionName": "ToWhite",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "blackOut"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "blackOutClicked"
             }
           }
         ]

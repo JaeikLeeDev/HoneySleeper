@@ -40,6 +40,7 @@ public:
     bool getWakeupAlarmUse();
 
     void switchLight(bool turnLightOn);
+    void switchDisplayOn(bool turnDisplayOn);
 
 private:
     SleepStartScreenPresenter();

@@ -51,6 +51,11 @@ SleepStartScreenViewBase::SleepStartScreenViewBase() :
     digitalClockWakeupTime.setTime24Hour(8, 0, 0);
     digitalClockWakeupTime.setAlpha(230);
 
+    blackOut.setXY(0, 0);
+    blackOut.setVisible(false);
+    blackOut.setBitmaps(touchgfx::Bitmap(BITMAP_BLACKOUT_ID), touchgfx::Bitmap(BITMAP_BLACKOUT_ID));
+    blackOut.setAction(buttonCallback);
+
     add(__background);
     add(background);
     add(buttonCancel);
@@ -58,6 +63,7 @@ SleepStartScreenViewBase::SleepStartScreenViewBase() :
     add(textAreaWakeupAt);
     add(digitalClock);
     add(digitalClockWakeupTime);
+    add(blackOut);
 }
 
 void SleepStartScreenViewBase::setupScreen()
@@ -73,5 +79,12 @@ void SleepStartScreenViewBase::buttonCallbackHandler(const touchgfx::AbstractBut
         //When buttonCancel clicked change screen to MainScreen
         //Go to MainScreen with screen transition towards North
         application().gotoMainScreenScreenSlideTransitionNorth();
+    }
+    else if (&src == &blackOut)
+    {
+        //ToWhite
+        //When blackOut clicked call virtual function
+        //Call blackOutClicked
+        blackOutClicked();
     }
 }

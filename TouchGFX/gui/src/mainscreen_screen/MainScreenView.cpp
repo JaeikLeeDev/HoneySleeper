@@ -1,7 +1,6 @@
 #include <gui/mainscreen_screen/MainScreenView.hpp>
 
 MainScreenView::MainScreenView() :
-	lightIsOn(true),
 	digitalClockClickedCallback(this, &MainScreenView::digitalClockClickHandler)
 {
 
@@ -15,6 +14,9 @@ void MainScreenView::setupScreen()
     						   presenter->getCurrentMinute(),
 							   presenter->getCurrentSecond());
     digitalClockWakeupTime.setTime24Hour(presenter->getWakeupHour(), presenter->getWakeupMinute(), 0);
+    updateLightImg(lightIsOn = presenter->getLightIsOn());
+    presenter->switchLight(lightIsOn);
+
 }
 
 void MainScreenView::tearDownScreen()

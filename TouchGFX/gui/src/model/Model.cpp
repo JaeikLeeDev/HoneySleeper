@@ -28,34 +28,15 @@ void Model::tick()
     }
 }
 
-void Model::saveLightIsOn(bool lightIsOn)
-{
-	Model::lightIsOn = lightIsOn;
-}
-
-bool Model::getLightIsOn()
-{
-	return lightIsOn;
-}
-
 void Model::switchLight(bool turnLightOn)
 {
 	main_switch_light_on((uint8_t)turnLightOn);
+	lightIsOn = turnLightOn;
 }
 
-int Model::getCurrentHour()
+void Model::switchDisplayOn(bool turnDisplayOn)
 {
-	return digitalHours;
-}
-
-int Model::getCurrentMinute()
-{
-	return digitalMinutes;
-}
-
-int Model::getCurrentSecond()
-{
-	return digitalSeconds;
+	main_display_on((uint8_t)turnDisplayOn);
 }
 
 void Model::setCurrentTime(int hour, int minute)
@@ -77,10 +58,11 @@ void Model::saveWakeupSetting(int hour, int minute, bool lightUse, bool alarmUse
 	wakeupAlarmUse = alarmUse;
 }
 
+int Model::getCurrentHour() { return digitalHours; }
+int Model::getCurrentMinute() { return digitalMinutes; }
+int Model::getCurrentSecond() { return digitalSeconds; }
 int Model::getWakeupHour() { return wakeupHour; }
-
 int Model::getWakeupMinute() { return wakeupMinute; }
-
 bool Model::getWakeupLightUse() { return wakeupLightUse; }
-
 bool Model::getWakeupAlarmUse() { return wakeupAlarmUse; }
+bool Model::getLightIsOn(){	return lightIsOn; }

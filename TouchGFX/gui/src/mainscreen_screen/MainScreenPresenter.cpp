@@ -22,6 +22,11 @@ void MainScreenPresenter::switchLight(bool turnLightOn)
 	model->switchLight(turnLightOn);
 }
 
+bool MainScreenPresenter::getLightIsOn()
+{
+	return model->getLightIsOn();
+}
+
 int MainScreenPresenter::getCurrentHour()
 {
 	return model->getCurrentHour();

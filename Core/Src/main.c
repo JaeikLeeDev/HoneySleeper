@@ -647,10 +647,20 @@ static void MX_GPIO_Init(void)
 void main_switch_light_on(uint8_t turn_light_on)
 {
 	if (turn_light_on) {
-		__HAL_TIM_SetCompare(&htim5, TIM_CHANNEL_1, 70);
+		__HAL_TIM_SetCompare(&htim5, TIM_CHANNEL_1, 60);
 	}
 	else {
-		__HAL_TIM_SetCompare(&htim5, TIM_CHANNEL_1, 85);
+		__HAL_TIM_SetCompare(&htim5, TIM_CHANNEL_1, 90);
+	}
+}
+
+void main_display_on(uint8_t turn_display_on)
+{
+	if (turn_display_on) {
+		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_1, GPIO_PIN_SET);
+	}
+	else {
+		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_1, GPIO_PIN_RESET);
 	}
 }
 /* USER CODE END 4 */

@@ -535,6 +535,11 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_background_wakeupSettingScreen.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/image_blackOut.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_blackOut.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/image_buttonCancelDonePressed.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_buttonCancelDonePressed.cpp</locationURI>
@@ -543,16 +548,6 @@
 			<name>Application/User/generated/image_buttonCancelDoneReleased.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_buttonCancelDoneReleased.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_buttonDownPressed.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_buttonDownPressed.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_buttonDownReleased.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_buttonDownReleased.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_buttonLightOffPressed.cpp</name>
@@ -583,16 +578,6 @@
 			<name>Application/User/generated/image_buttonSleepStartReleased.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_buttonSleepStartReleased.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_buttonUpPressed.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_buttonUpPressed.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_buttonUpReleased.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_buttonUpReleased.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_icon_light_off.cpp</name>

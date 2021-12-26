@@ -33,32 +33,34 @@ WakeupSettingScreenViewBase::WakeupSettingScreenViewBase() :
     buttonDone.setAction(buttonCallback);
 
     toggleButtonAlarmUse.setXY(249, 188);
+    toggleButtonAlarmUse.setVisible(false);
     toggleButtonAlarmUse.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_ROUND_LARGE_BUTTON_OFF_ID), touchgfx::Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_ROUND_LARGE_BUTTON_ON_ID));
     toggleButtonAlarmUse.setAlpha(200);
 
     textAreaAlarmUse.setXY(33, 198);
+    textAreaAlarmUse.setVisible(false);
     textAreaAlarmUse.setColor(touchgfx::Color::getColorFromRGB(17, 17, 17));
     textAreaAlarmUse.setLinespacing(0);
     textAreaAlarmUse.setAlpha(230);
     textAreaAlarmUse.setTypedText(touchgfx::TypedText(T___SINGLEUSE_FD14));
 
-    toggleButtonLightUse.setXY(249, 131);
+    toggleButtonLightUse.setXY(315, 169);
     toggleButtonLightUse.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_ROUND_LARGE_BUTTON_OFF_ID), touchgfx::Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_ROUND_LARGE_BUTTON_ON_ID));
     toggleButtonLightUse.setAlpha(200);
 
-    textAreaLightUse.setXY(33, 141);
+    textAreaLightUse.setXY(33, 176);
     textAreaLightUse.setColor(touchgfx::Color::getColorFromRGB(17, 17, 17));
     textAreaLightUse.setLinespacing(0);
     textAreaLightUse.setAlpha(230);
     textAreaLightUse.setTypedText(touchgfx::TypedText(T___SINGLEUSE_N3EO));
 
-    textAreaWakeupAt.setXY(33, 85);
+    textAreaWakeupAt.setXY(33, 96);
     textAreaWakeupAt.setColor(touchgfx::Color::getColorFromRGB(17, 17, 17));
     textAreaWakeupAt.setLinespacing(0);
     textAreaWakeupAt.setAlpha(230);
     textAreaWakeupAt.setTypedText(touchgfx::TypedText(T___SINGLEUSE_3IFJ));
 
-    textAreaHour.setXY(129, 86);
+    textAreaHour.setXY(168, 97);
     textAreaHour.setColor(touchgfx::Color::getColorFromRGB(17, 17, 17));
     textAreaHour.setLinespacing(0);
     textAreaHour.setAlpha(230);
@@ -67,7 +69,7 @@ WakeupSettingScreenViewBase::WakeupSettingScreenViewBase() :
     textAreaHour.resizeToCurrentText();
     textAreaHour.setTypedText(touchgfx::TypedText(T___SINGLEUSE_PXFO));
 
-    textAreaMinute.setXY(157, 86);
+    textAreaMinute.setXY(215, 96);
     textAreaMinute.setColor(touchgfx::Color::getColorFromRGB(17, 17, 17));
     textAreaMinute.setLinespacing(0);
     textAreaMinute.setAlpha(230);
@@ -76,27 +78,23 @@ WakeupSettingScreenViewBase::WakeupSettingScreenViewBase() :
     textAreaMinute.resizeToCurrentText();
     textAreaMinute.setTypedText(touchgfx::TypedText(T___SINGLEUSE_VP4A));
 
-    buttonMinDown.setXY(159, 106);
-    buttonMinDown.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTONDOWNRELEASED_ID), touchgfx::Bitmap(BITMAP_BUTTONDOWNPRESSED_ID));
+    buttonMinDown.setXY(211, 124);
+    buttonMinDown.setBitmaps(touchgfx::Bitmap(BITMAP_DOWN_ARROW_ID), touchgfx::Bitmap(BITMAP_DOWN_ARROW_PRESSED_ID));
     buttonMinDown.setAction(buttonCallback);
-    buttonMinDown.setAlpha(200);
 
-    buttonMinUp.setXY(159, 77);
-    buttonMinUp.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTONUPRELEASED_ID), touchgfx::Bitmap(BITMAP_BUTTONUPPRESSED_ID));
+    buttonMinUp.setXY(211, 77);
+    buttonMinUp.setBitmaps(touchgfx::Bitmap(BITMAP_UP_ARROW_ID), touchgfx::Bitmap(BITMAP_UP_ARROW_PRESSED_ID));
     buttonMinUp.setAction(buttonCallback);
-    buttonMinUp.setAlpha(200);
 
-    buttonHourDown.setXY(132, 106);
-    buttonHourDown.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTONDOWNRELEASED_ID), touchgfx::Bitmap(BITMAP_BUTTONDOWNPRESSED_ID));
+    buttonHourDown.setXY(165, 124);
+    buttonHourDown.setBitmaps(touchgfx::Bitmap(BITMAP_DOWN_ARROW_ID), touchgfx::Bitmap(BITMAP_DOWN_ARROW_PRESSED_ID));
     buttonHourDown.setAction(buttonCallback);
-    buttonHourDown.setAlpha(200);
 
-    buttonHourUp.setXY(132, 76);
-    buttonHourUp.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTONUPRELEASED_ID), touchgfx::Bitmap(BITMAP_BUTTONUPPRESSED_ID));
+    buttonHourUp.setXY(165, 77);
+    buttonHourUp.setBitmaps(touchgfx::Bitmap(BITMAP_UP_ARROW_ID), touchgfx::Bitmap(BITMAP_UP_ARROW_PRESSED_ID));
     buttonHourUp.setAction(buttonCallback);
-    buttonHourUp.setAlpha(200);
 
-    textAreaColon.setXY(149, 84);
+    textAreaColon.setXY(200, 94);
     textAreaColon.setColor(touchgfx::Color::getColorFromRGB(17, 17, 17));
     textAreaColon.setLinespacing(0);
     textAreaColon.setAlpha(230);

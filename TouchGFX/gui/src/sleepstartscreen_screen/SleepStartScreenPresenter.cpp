@@ -22,42 +22,20 @@ void SleepStartScreenPresenter::updateDigitalClock(int digitalHours, int digital
 	view.updateDigitalClock(digitalHours, digitalMinutes, digitalSeconds);
 }
 
-int SleepStartScreenPresenter::getCurrentHour()
-{
-	return model->getCurrentHour();
-}
-
-int SleepStartScreenPresenter::getCurrentMinute()
-{
-	return model->getCurrentMinute();
-}
-
-int SleepStartScreenPresenter::getCurrentSecond()
-{
-	return model->getCurrentSecond();
-}
-
-int SleepStartScreenPresenter::getWakeupHour()
-{
-	return model->getWakeupHour();
-}
-
-int SleepStartScreenPresenter::getWakeupMinute()
-{
-	return model->getWakeupMinute();
-}
-
 void SleepStartScreenPresenter::switchLight(bool turnLightOn)
 {
 	model->switchLight(turnLightOn);
 }
 
-bool SleepStartScreenPresenter::getWakeupLightUse()
+void SleepStartScreenPresenter::switchDisplayOn(bool turnDisplayOn)
 {
-	return model->getWakeupLightUse();
+	model->switchDisplayOn(turnDisplayOn);
 }
 
-bool SleepStartScreenPresenter::getWakeupAlarmUse()
-{
-	return model->getWakeupAlarmUse();
-}
+int SleepStartScreenPresenter::getCurrentHour() 	{ return model->getCurrentHour(); }
+int SleepStartScreenPresenter::getCurrentMinute() 	{ return model->getCurrentMinute(); }
+int SleepStartScreenPresenter::getCurrentSecond() 	{ return model->getCurrentSecond(); }
+int SleepStartScreenPresenter::getWakeupHour() 		{ return model->getWakeupHour(); }
+int SleepStartScreenPresenter::getWakeupMinute() 	{ return model->getWakeupMinute(); }
+bool SleepStartScreenPresenter::getWakeupLightUse() { return model->getWakeupLightUse(); }
+bool SleepStartScreenPresenter::getWakeupAlarmUse() { return model->getWakeupAlarmUse(); }

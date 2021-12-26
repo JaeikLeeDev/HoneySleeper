@@ -57,6 +57,7 @@ void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
 void main_switch_light_on(uint8_t turn_light_on);
+void main_display_on(uint8_t turn_display_on);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/

@@ -16,13 +16,13 @@
     <Text Id="__SingleUse_BVCT" TypographyId="CancelDoneButton" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Done</Translation>
     </Text>
-    <Text Id="__SingleUse_N3EO" TypographyId="InBoxText" Alignment="Left" Direction="LTR">
+    <Text Id="__SingleUse_N3EO" TypographyId="Default" Alignment="Left" Direction="LTR">
       <Translation Language="GB">At wake-up, turn the light</Translation>
     </Text>
-    <Text Id="__SingleUse_3IFJ" TypographyId="MSmallWildcard" Alignment="Left" Direction="LTR">
+    <Text Id="__SingleUse_3IFJ" TypographyId="Default" Alignment="Left" Direction="LTR">
       <Translation Language="GB">Wake up at</Translation>
     </Text>
-    <Text Id="__SingleUse_TBGZ" TypographyId="MSmallWildcard" Alignment="Left" Direction="LTR">
+    <Text Id="__SingleUse_TBGZ" TypographyId="Default" Alignment="Left" Direction="LTR">
       <Translation Language="GB">:</Translation>
     </Text>
     <Text Id="__SingleUse_FD14" TypographyId="InBoxText" Alignment="Left" Direction="LTR">
@@ -64,16 +64,16 @@
     <Text Id="__SingleUse_QCCC" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">Set Current Time</Translation>
     </Text>
-    <Text Id="__SingleUse_PXFO" TypographyId="MSmallWildcard" Alignment="Center" Direction="LTR">
+    <Text Id="__SingleUse_PXFO" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">&lt;value&gt;</Translation>
     </Text>
-    <Text Id="__SingleUse_F9FY" TypographyId="MSmallWildcard" Alignment="Left" Direction="LTR">
+    <Text Id="__SingleUse_F9FY" TypographyId="Default" Alignment="Left" Direction="LTR">
       <Translation Language="GB">08</Translation>
     </Text>
-    <Text Id="__SingleUse_VP4A" TypographyId="MSmallWildcard" Alignment="Center" Direction="LTR">
+    <Text Id="__SingleUse_VP4A" TypographyId="Default" Alignment="Center" Direction="LTR">
       <Translation Language="GB">&lt;value&gt;</Translation>
     </Text>
-    <Text Id="__SingleUse_TKPK" TypographyId="MSmallWildcard" Alignment="Left" Direction="LTR">
+    <Text Id="__SingleUse_TKPK" TypographyId="Default" Alignment="Left" Direction="LTR">
       <Translation Language="GB">00</Translation>
     </Text>
     <Text Id="__SingleUse_PR7W" TypographyId="MSmallWildcard" Alignment="Center" Direction="LTR">

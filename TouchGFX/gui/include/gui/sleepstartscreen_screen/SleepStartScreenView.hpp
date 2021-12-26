@@ -15,6 +15,8 @@ public:
     virtual void handleTickEvent();
     void updateDigitalClock(int digitalHours, int digitalMinutes, int digitalSeconds);
 
+    virtual void blackOutClicked();
+
 protected:
     int digitalHours;
     int digitalMinutes;
@@ -22,6 +24,9 @@ protected:
 
     int wakeupHour;
     int wakeupMinute;
+
+    int tickCounter;
+    bool screenIsBlack;
 };
 
 #endif // SLEEPSTARTSCREENVIEW_HPP
