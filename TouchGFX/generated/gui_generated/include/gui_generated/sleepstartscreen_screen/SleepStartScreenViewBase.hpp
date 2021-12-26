@@ -34,7 +34,7 @@ protected:
     touchgfx::TextArea textAreaHope;
     touchgfx::TextArea textAreaWakeupAt;
     touchgfx::DigitalClock digitalClock;
-    touchgfx::DigitalClock digitalClockWakeupTime_1;
+    touchgfx::DigitalClock digitalClockWakeupTime;
 
 private:
 

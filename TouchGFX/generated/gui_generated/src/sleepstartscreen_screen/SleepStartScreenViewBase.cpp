@@ -43,13 +43,13 @@ SleepStartScreenViewBase::SleepStartScreenViewBase() :
     digitalClock.setDisplayMode(touchgfx::DigitalClock::DISPLAY_24_HOUR);
     digitalClock.setTime24Hour(10, 10, 0);
 
-    digitalClockWakeupTime_1.setPosition(250, 92, 60, 25);
-    digitalClockWakeupTime_1.setColor(touchgfx::Color::getColorFromRGB(17, 17, 17));
-    digitalClockWakeupTime_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_UODD));
-    digitalClockWakeupTime_1.displayLeadingZeroForHourIndicator(true);
-    digitalClockWakeupTime_1.setDisplayMode(touchgfx::DigitalClock::DISPLAY_24_HOUR_NO_SECONDS);
-    digitalClockWakeupTime_1.setTime24Hour(8, 0, 0);
-    digitalClockWakeupTime_1.setAlpha(230);
+    digitalClockWakeupTime.setPosition(250, 92, 60, 25);
+    digitalClockWakeupTime.setColor(touchgfx::Color::getColorFromRGB(17, 17, 17));
+    digitalClockWakeupTime.setTypedText(touchgfx::TypedText(T___SINGLEUSE_UODD));
+    digitalClockWakeupTime.displayLeadingZeroForHourIndicator(true);
+    digitalClockWakeupTime.setDisplayMode(touchgfx::DigitalClock::DISPLAY_24_HOUR_NO_SECONDS);
+    digitalClockWakeupTime.setTime24Hour(8, 0, 0);
+    digitalClockWakeupTime.setAlpha(230);
 
     add(__background);
     add(background);
@@ -57,7 +57,7 @@ SleepStartScreenViewBase::SleepStartScreenViewBase() :
     add(textAreaHope);
     add(textAreaWakeupAt);
     add(digitalClock);
-    add(digitalClockWakeupTime_1);
+    add(digitalClockWakeupTime);
 }
 
 void SleepStartScreenViewBase::setupScreen()

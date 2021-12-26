@@ -8,6 +8,9 @@ WakeupSettingScreenView::WakeupSettingScreenView()
 void WakeupSettingScreenView::setupScreen()
 {
     WakeupSettingScreenViewBase::setupScreen();
+    digitalClock.setTime24Hour(presenter->getCurrentHour(),
+    						   presenter->getCurrentMinute(),
+							   presenter->getCurrentSecond());
 	hour = presenter->getWakeupHour();
 	minute = presenter->getWakeupMinute();
     Unicode::snprintf(textAreaHourBuffer, TEXTAREAHOUR_SIZE, "%02d", hour);

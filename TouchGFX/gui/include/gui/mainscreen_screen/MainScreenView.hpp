@@ -18,9 +18,6 @@ public:
     void digitalClockClickHandler(const DigitalClock& dc, const ClickEvent& e);
     void updateDigitalClock(int digitalHours, int digitalMinutes, int digitalSeconds);
 protected:
-    int digitalHours;
-    int digitalMinutes;
-    int digitalSeconds;
     Callback<MainScreenView, const DigitalClock&, const ClickEvent&> digitalClockClickedCallback;
     bool lightIsOn;
 };

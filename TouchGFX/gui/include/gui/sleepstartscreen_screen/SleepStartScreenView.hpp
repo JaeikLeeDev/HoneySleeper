@@ -12,10 +12,13 @@ public:
     virtual void setupScreen();
     virtual void tearDownScreen();
 
+    virtual void handleTickEvent();
     void updateDigitalClock(int digitalHours, int digitalMinutes, int digitalSeconds);
 
-
 protected:
+    int digitalHours;
+    int digitalMinutes;
+    int digitalSeconds;
 };
 
 #endif // SLEEPSTARTSCREENVIEW_HPP

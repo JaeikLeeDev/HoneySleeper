@@ -634,7 +634,7 @@
           },
           {
             "Type": "DigitalClock",
-            "Name": "digitalClockWakeupTime_1",
+            "Name": "digitalClockWakeupTime",
             "X": 250,
             "Y": 92,
             "Width": 60,

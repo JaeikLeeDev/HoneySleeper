@@ -21,3 +21,28 @@ void SleepStartScreenPresenter::updateDigitalClock(int digitalHours, int digital
 {
 	view.updateDigitalClock(digitalHours, digitalMinutes, digitalSeconds);
 }
+
+int SleepStartScreenPresenter::getCurrentHour()
+{
+	return model->getCurrentHour();
+}
+
+int SleepStartScreenPresenter::getCurrentMinute()
+{
+	return model->getCurrentMinute();
+}
+
+int SleepStartScreenPresenter::getCurrentSecond()
+{
+	return model->getCurrentSecond();
+}
+
+int SleepStartScreenPresenter::getWakeupHour()
+{
+	return model->getWakeupHour();
+}
+
+int SleepStartScreenPresenter::getWakeupMinute()
+{
+	return model->getWakeupMinute();
+}

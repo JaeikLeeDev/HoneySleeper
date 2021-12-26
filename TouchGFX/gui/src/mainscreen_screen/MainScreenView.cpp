@@ -11,6 +11,9 @@ void MainScreenView::setupScreen()
 {
     MainScreenViewBase::setupScreen();
     digitalClock.setClickAction(digitalClockClickedCallback);
+    digitalClock.setTime24Hour(presenter->getCurrentHour(),
+    						   presenter->getCurrentMinute(),
+							   presenter->getCurrentSecond());
     digitalClockWakeupTime.setTime24Hour(presenter->getWakeupHour(), presenter->getWakeupMinute(), 0);
 }
 
@@ -43,10 +46,6 @@ void MainScreenView::updateLightImg(bool turnLightOn)
 
 void MainScreenView::updateDigitalClock(int digitalHours, int digitalMinutes, int digitalSeconds)
 {
-	// Update the clock
-	MainScreenView::digitalHours = digitalHours;
-	MainScreenView::digitalMinutes = digitalMinutes;
-	MainScreenView::digitalSeconds = digitalSeconds;
 	digitalClock.setTime24Hour(digitalHours, digitalMinutes, digitalSeconds);
 }
 

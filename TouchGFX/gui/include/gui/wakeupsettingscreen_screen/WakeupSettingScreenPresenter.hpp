@@ -29,6 +29,10 @@ public:
 
     virtual void updateDigitalClock(int digitalHours, int digitalMinutes, int digitalSeconds);
 
+    int getCurrentHour();
+    int getCurrentMinute();
+    int getCurrentSecond();
+
     void saveWakeupSetting(int hour, int minute, bool lightUse, bool alarmUse);
     int getWakeupHour();
     int getWakeupMinute();

@@ -24,8 +24,8 @@ void Model::tick()
                 }
             }
         }
+        updateDigitalClock(digitalHours, digitalMinutes, digitalSeconds);
     }
-    updateDigitalClock(digitalHours, digitalMinutes, digitalSeconds);
 }
 
 void Model::saveLightIsOn(bool lightIsOn)

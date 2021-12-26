@@ -29,6 +29,13 @@ public:
 
     virtual void updateDigitalClock(int digitalHours, int digitalMinutes, int digitalSeconds);
 
+    int getCurrentHour();
+    int getCurrentMinute();
+    int getCurrentSecond();
+
+    int getWakeupHour();
+    int getWakeupMinute();
+
 private:
     SleepStartScreenPresenter();
 
