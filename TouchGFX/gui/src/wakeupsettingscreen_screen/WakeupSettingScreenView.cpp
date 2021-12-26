@@ -12,8 +12,12 @@ void WakeupSettingScreenView::setupScreen()
 	minute = presenter->getWakeupMinute();
     Unicode::snprintf(textAreaHourBuffer, TEXTAREAHOUR_SIZE, "%02d", hour);
     Unicode::snprintf(textAreaMinuteBuffer, TEXTAREAMINUTE_SIZE, "%02d", minute);
+	toggleButtonLightUse.forceState(presenter->getWakeupLightUse());
+	toggleButtonAlarmUse.forceState(presenter->getWakeupAlarmUse());
     textAreaHour.invalidate();
     textAreaMinute.invalidate();
+	toggleButtonLightUse.invalidate();
+	toggleButtonAlarmUse.invalidate();
 }
 
 void WakeupSettingScreenView::tearDownScreen()
@@ -56,6 +60,8 @@ void WakeupSettingScreenView::buttonMinDownClicked()
 
 void WakeupSettingScreenView::buttonDoneClicked()
 {
-    presenter->setWakeupTime(hour, minute);
+    presenter->saveWakeupSetting(hour, minute,
+    		toggleButtonLightUse.getState(),
+			toggleButtonAlarmUse.getState());
     application().gotoMainScreenScreenSlideTransitionWest();
 }

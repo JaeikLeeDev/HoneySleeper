@@ -69,18 +69,18 @@ void Model::updateDigitalClock(int digitalHours, int digitalMinutes, int digital
 	modelListener->updateDigitalClock(digitalHours, digitalMinutes, digitalSeconds);
 }
 
-void Model::setWakeupTime(int hour, int minute)
+void Model::saveWakeupSetting(int hour, int minute, bool lightUse, bool alarmUse)
 {
 	wakeupHour = hour;
 	wakeupMinute = minute;
+	wakeupLightUse = lightUse;
+	wakeupAlarmUse = alarmUse;
 }
 
-int Model::getWakeupHour()
-{
-	return wakeupHour;
-}
+int Model::getWakeupHour() { return wakeupHour; }
 
-int Model::getWakeupMinute()
-{
-	return wakeupMinute;
-}
+int Model::getWakeupMinute() { return wakeupMinute; }
+
+bool Model::getWakeupLightUse() { return wakeupLightUse; }
+
+bool Model::getWakeupAlarmUse() { return wakeupAlarmUse; }

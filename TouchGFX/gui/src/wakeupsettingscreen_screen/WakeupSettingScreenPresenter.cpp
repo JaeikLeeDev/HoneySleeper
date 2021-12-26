@@ -22,9 +22,9 @@ void WakeupSettingScreenPresenter::updateDigitalClock(int digitalHours, int digi
 	view.updateDigitalClock(digitalHours, digitalMinutes, digitalSeconds);
 }
 
-void WakeupSettingScreenPresenter::setWakeupTime(int hour, int minute)
+void WakeupSettingScreenPresenter::saveWakeupSetting(int hour, int minute, bool lightUse, bool alarmUse)
 {
-	model->setWakeupTime(hour, minute);
+	model->saveWakeupSetting(hour, minute, lightUse, alarmUse);
 }
 
 int WakeupSettingScreenPresenter::getWakeupHour()
@@ -35,4 +35,14 @@ int WakeupSettingScreenPresenter::getWakeupHour()
 int WakeupSettingScreenPresenter::getWakeupMinute()
 {
 	return model->getWakeupMinute();
+}
+
+bool WakeupSettingScreenPresenter::getWakeupLightUse()
+{
+	return model->getWakeupLightUse();
+}
+
+bool WakeupSettingScreenPresenter::getWakeupAlarmUse()
+{
+	return model->getWakeupAlarmUse();
 }
