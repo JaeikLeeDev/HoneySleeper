@@ -20,6 +20,8 @@
 #include <gui/wakeupsettingscreen_screen/WakeupSettingScreenPresenter.hpp>
 #include <gui/sleepstartscreen_screen/SleepStartScreenView.hpp>
 #include <gui/sleepstartscreen_screen/SleepStartScreenPresenter.hpp>
+#include <gui/setclockscreen_screen/SetClockScreenView.hpp>
+#include <gui/setclockscreen_screen/SetClockScreenPresenter.hpp>
 
 
 /**
@@ -45,7 +47,8 @@ public:
     typedef touchgfx::meta::TypeList< MainScreenView,
             touchgfx::meta::TypeList< WakeupSettingScreenView,
             touchgfx::meta::TypeList< SleepStartScreenView,
-            touchgfx::meta::Nil > >
+            touchgfx::meta::TypeList< SetClockScreenView,
+            touchgfx::meta::Nil > > >
             > GeneratedViewTypes;
 
     /**
@@ -60,7 +63,8 @@ public:
     typedef touchgfx::meta::TypeList< MainScreenPresenter,
             touchgfx::meta::TypeList< WakeupSettingScreenPresenter,
             touchgfx::meta::TypeList< SleepStartScreenPresenter,
-            touchgfx::meta::Nil > >
+            touchgfx::meta::TypeList< SetClockScreenPresenter,
+            touchgfx::meta::Nil > > >
             > GeneratedPresenterTypes;
 
     /**
@@ -75,8 +79,8 @@ public:
     typedef touchgfx::meta::TypeList< touchgfx::NoTransition,
             touchgfx::meta::TypeList< SlideTransition<EAST>,
             touchgfx::meta::TypeList< SlideTransition<SOUTH>,
-            touchgfx::meta::TypeList< SlideTransition<WEST>,
             touchgfx::meta::TypeList< SlideTransition<NORTH>,
+            touchgfx::meta::TypeList< SlideTransition<WEST>,
             touchgfx::meta::Nil > > > >
             > GeneratedTransitionTypes;
 

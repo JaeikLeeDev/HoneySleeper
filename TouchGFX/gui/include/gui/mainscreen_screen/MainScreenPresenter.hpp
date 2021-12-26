@@ -29,6 +29,14 @@ public:
 
     void switchLight(bool turnLightOn);
 
+    int getCurrentHour();
+    int getCurrentMinute();
+    int getCurrentSecond();
+    virtual void updateDigitalClock(int digitalHours, int digitalMinutes, int digitalSeconds);
+
+    int getWakeupHour();
+    int getWakeupMinute();
+
 private:
     MainScreenPresenter();
 

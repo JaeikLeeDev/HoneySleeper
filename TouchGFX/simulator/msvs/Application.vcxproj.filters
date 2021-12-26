@@ -190,12 +190,6 @@
     <Filter Include="Source Files\gui\wakeupsettingscreen_screen">
       <UniqueIdentifier>77231900-0DA2-9768-897F-4A10CB16E571</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\gui\containers">
-      <UniqueIdentifier>A3599676-FC10-C107-C4E0-3A60A51A5DE4</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\gui\containers">
-      <UniqueIdentifier>E6AA8600-6DC3-03C0-80B1-6E864FAC2A19</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\generated\gui_generated\containers">
       <UniqueIdentifier>73F5196D-7E76-5F9D-5458-522ACF91E030</UniqueIdentifier>
     </Filter>
@@ -219,6 +213,18 @@
     </Filter>
     <Filter Include="Source Files\generated\gui_generated\sleepstartscreen_screen">
       <UniqueIdentifier>F6BB096D-CD3B-304E-7C0C-F5E2CF574087</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\setclockscreen_screen">
+      <UniqueIdentifier>738FA55C-D641-5B37-2E60-72B0985DAAA5</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\setclockscreen_screen">
+      <UniqueIdentifier>A78FFA5E-BA44-C3A0-645E-5850C6FA31E4</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\setclockscreen_screen">
+      <UniqueIdentifier>43199F1B-6C68-38CB-C9F6-DBC0C7681EAB</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\setclockscreen_screen">
+      <UniqueIdentifier>AFE53706-D28F-8D3D-60DF-82FC7B0359AF</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -261,18 +267,6 @@
     <ClCompile Include="..\..\generated\gui_generated\src\mainscreen_screen\MainScreenViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\mainscreen_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\containers\WakeupHour.cpp">
-      <Filter>Source Files\gui\containers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\WakeupHourBase.cpp">
-      <Filter>Source Files\generated\gui_generated\containers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\containers\WakeupMin.cpp">
-      <Filter>Source Files\gui\containers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\WakeupMinBase.cpp">
-      <Filter>Source Files\generated\gui_generated\containers</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\gui\src\wakeupsettingscreen_screen\WakeupSettingScreenPresenter.cpp">
       <Filter>Source Files\gui\wakeupsettingscreen_screen</Filter>
     </ClCompile>
@@ -290,6 +284,15 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\sleepstartscreen_screen\SleepStartScreenViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\sleepstartscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\setclockscreen_screen\SetClockScreenPresenter.cpp">
+      <Filter>Source Files\gui\setclockscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\setclockscreen_screen\SetClockScreenView.cpp">
+      <Filter>Source Files\gui\setclockscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\setclockscreen_screen\SetClockScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\setclockscreen_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -742,18 +745,6 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\mainscreen_screen\MainScreenViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\mainscreen_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\containers\WakeupHour.hpp">
-      <Filter>Header Files\gui\containers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\WakeupHourBase.hpp">
-      <Filter>Header Files\generated\gui_generated\containers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\containers\WakeupMin.hpp">
-      <Filter>Header Files\gui\containers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\WakeupMinBase.hpp">
-      <Filter>Header Files\generated\gui_generated\containers</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\wakeupsettingscreen_screen\WakeupSettingScreenPresenter.hpp">
       <Filter>Header Files\gui\wakeupsettingscreen_screen</Filter>
     </ClInclude>
@@ -771,6 +762,15 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\sleepstartscreen_screen\SleepStartScreenViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\sleepstartscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\setclockscreen_screen\SetClockScreenPresenter.hpp">
+      <Filter>Header Files\gui\setclockscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\setclockscreen_screen\SetClockScreenView.hpp">
+      <Filter>Header Files\gui\setclockscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\setclockscreen_screen\SetClockScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\setclockscreen_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

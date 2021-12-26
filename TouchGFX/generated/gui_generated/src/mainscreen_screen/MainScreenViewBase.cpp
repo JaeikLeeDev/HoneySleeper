@@ -13,6 +13,10 @@ MainScreenViewBase::MainScreenViewBase() :
     __background.setPosition(0, 0, 480, 272);
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
 
+    buttonGoToSetClockScreen.setXY(0, 0);
+    buttonGoToSetClockScreen.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
+    buttonGoToSetClockScreen.setAction(buttonCallback);
+
     background.setXY(0, 0);
     background.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND_MAINSCREEN_ID));
 
@@ -47,18 +51,41 @@ MainScreenViewBase::MainScreenViewBase() :
     buttonSleepStart.setAlpha(230);
     buttonSleepStart.setAction(buttonCallback);
 
+    digitalClockWakeupTime.setPosition(321, 136, 80, 25);
+    digitalClockWakeupTime.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    digitalClockWakeupTime.setTypedText(touchgfx::TypedText(T___SINGLEUSE_FEWJ));
+    digitalClockWakeupTime.displayLeadingZeroForHourIndicator(true);
+    digitalClockWakeupTime.setDisplayMode(touchgfx::DigitalClock::DISPLAY_24_HOUR_NO_SECONDS);
+    digitalClockWakeupTime.setTime24Hour(8, 0, 0);
+
+    textAreaSetTimer.setXY(312, 94);
+    textAreaSetTimer.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textAreaSetTimer.setLinespacing(0);
+    textAreaSetTimer.setTypedText(touchgfx::TypedText(T___SINGLEUSE_TU3R));
+
     buttonWakeupInfo.setXY(285, 33);
     buttonWakeupInfo.setBitmaps(touchgfx::Bitmap(BITMAP_WAKEUPSETTINGINFO_ID), touchgfx::Bitmap(BITMAP_WAKEUPSETTINGINFO_ID));
     buttonWakeupInfo.setAction(buttonCallback);
 
+    digitalClock.setPosition(200, 4, 80, 20);
+    digitalClock.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    digitalClock.setTypedText(touchgfx::TypedText(T___SINGLEUSE_HMRZ));
+    digitalClock.displayLeadingZeroForHourIndicator(true);
+    digitalClock.setDisplayMode(touchgfx::DigitalClock::DISPLAY_24_HOUR);
+    digitalClock.setTime24Hour(10, 10, 0);
+
     add(__background);
+    add(buttonGoToSetClockScreen);
     add(background);
     add(buttonLightOff);
     add(buttonLightOn);
     add(imgSwitchOff);
     add(imgSwitchOn);
     add(buttonSleepStart);
+    add(digitalClockWakeupTime);
+    add(textAreaSetTimer);
     add(buttonWakeupInfo);
+    add(digitalClock);
 }
 
 void MainScreenViewBase::setupScreen()
@@ -68,7 +95,14 @@ void MainScreenViewBase::setupScreen()
 
 void MainScreenViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
 {
-    if (&src == &buttonLightOff)
+    if (&src == &buttonGoToSetClockScreen)
+    {
+        //GoToSetClockScreen
+        //When buttonGoToSetClockScreen clicked change screen to SetClockScreen
+        //Go to SetClockScreen with screen transition towards North
+        application().gotoSetClockScreenScreenSlideTransitionNorth();
+    }
+    else if (&src == &buttonLightOff)
     {
         //LightOff
         //When buttonLightOff clicked call virtual function

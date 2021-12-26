@@ -1,6 +1,8 @@
 #include <gui/mainscreen_screen/MainScreenView.hpp>
 
-MainScreenView::MainScreenView() : lightIsOn(true)
+MainScreenView::MainScreenView() :
+	lightIsOn(true),
+	digitalClockClickedCallback(this, &MainScreenView::digitalClockClickHandler)
 {
 
 }
@@ -8,6 +10,8 @@ MainScreenView::MainScreenView() : lightIsOn(true)
 void MainScreenView::setupScreen()
 {
     MainScreenViewBase::setupScreen();
+    digitalClock.setClickAction(digitalClockClickedCallback);
+    digitalClockWakeupTime.setTime24Hour(presenter->getWakeupHour(), presenter->getWakeupMinute(), 0);
 }
 
 void MainScreenView::tearDownScreen()
@@ -35,4 +39,20 @@ void MainScreenView::updateLightImg(bool turnLightOn)
 	MainScreenViewBase::imgSwitchOff.setVisible(!turnLightOn);
 	MainScreenViewBase::imgSwitchOn.invalidate();
 	MainScreenViewBase::imgSwitchOff.invalidate();
+}
+
+void MainScreenView::updateDigitalClock(int digitalHours, int digitalMinutes, int digitalSeconds)
+{
+	// Update the clock
+	MainScreenView::digitalHours = digitalHours;
+	MainScreenView::digitalMinutes = digitalMinutes;
+	MainScreenView::digitalSeconds = digitalSeconds;
+	digitalClock.setTime24Hour(digitalHours, digitalMinutes, digitalSeconds);
+}
+
+void MainScreenView::digitalClockClickHandler(const DigitalClock& dc, const ClickEvent& e)
+{
+	if (&dc == &digitalClock) {
+		application().gotoSetClockScreenScreenSlideTransitionNorth();
+	}
 }

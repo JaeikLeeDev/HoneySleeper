@@ -20,6 +20,7 @@ struct Typography
     static const touchgfx::FontId INBOXTEXT = 4;
     static const touchgfx::FontId CANCELDONEBUTTON = 5;
     static const touchgfx::FontId MSMALLWILDCARD = 6;
+    static const touchgfx::FontId DIGITALCLOCK = 7;
 };
 
 struct TypographyFontIndex
@@ -31,6 +32,7 @@ struct TypographyFontIndex
     static const touchgfx::FontId INBOXTEXT = 3;        // verdana_15_4bpp
     static const touchgfx::FontId CANCELDONEBUTTON = 2; // verdana_10_4bpp
     static const touchgfx::FontId MSMALLWILDCARD = 3;   // verdana_15_4bpp
+    static const touchgfx::FontId DIGITALCLOCK = 3;     // verdana_15_4bpp
     static const uint16_t NUMBER_OF_FONTS = 4;
 };
 

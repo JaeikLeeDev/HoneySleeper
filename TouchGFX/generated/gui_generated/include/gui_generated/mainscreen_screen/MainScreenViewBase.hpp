@@ -8,9 +8,12 @@
 #include <mvp/View.hpp>
 #include <gui/mainscreen_screen/MainScreenPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
+#include <touchgfx/widgets/Button.hpp>
 #include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
-#include <touchgfx/widgets/Button.hpp>
+#include <touchgfx/containers/clock/DigitalClock.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
+#include <touchgfx/mixins/ClickListener.hpp>
 
 class MainScreenViewBase : public touchgfx::View<MainScreenPresenter>
 {
@@ -41,13 +44,17 @@ protected:
      * Member Declarations
      */
     touchgfx::Box __background;
+    touchgfx::Button buttonGoToSetClockScreen;
     touchgfx::Image background;
     touchgfx::ButtonWithLabel buttonLightOff;
     touchgfx::ButtonWithLabel buttonLightOn;
     touchgfx::Image imgSwitchOff;
     touchgfx::Image imgSwitchOn;
     touchgfx::ButtonWithLabel buttonSleepStart;
+    touchgfx::DigitalClock digitalClockWakeupTime;
+    touchgfx::TextArea textAreaSetTimer;
     touchgfx::Button buttonWakeupInfo;
+    touchgfx::ClickListener< touchgfx::DigitalClock > digitalClock;
 
 private:
 

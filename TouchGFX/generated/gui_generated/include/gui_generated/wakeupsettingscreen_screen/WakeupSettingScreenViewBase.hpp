@@ -12,8 +12,9 @@
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
 #include <touchgfx/widgets/ToggleButton.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
-#include <touchgfx/containers/scrollers/ScrollWheel.hpp>
-#include <gui/containers/WakeupHour.hpp>
+#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
+#include <touchgfx/widgets/Button.hpp>
+#include <touchgfx/containers/clock/DigitalClock.hpp>
 
 class WakeupSettingScreenViewBase : public touchgfx::View<WakeupSettingScreenPresenter>
 {
@@ -22,12 +23,30 @@ public:
     virtual ~WakeupSettingScreenViewBase() {}
     virtual void setupScreen();
 
-    virtual void scrollWheelWkaeupMinUpdateItem(WakeupHour& item, int16_t itemIndex)
+    /*
+     * Virtual Action Handlers
+     */
+    virtual void buttonHourUpClicked()
     {
         // Override and implement this function in WakeupSettingScreen
     }
 
-    virtual void scrollWheelWkaeupHourUpdateItem(WakeupHour& item, int16_t itemIndex)
+    virtual void buttonHourDownClicked()
+    {
+        // Override and implement this function in WakeupSettingScreen
+    }
+
+    virtual void buttonMinUpClicked()
+    {
+        // Override and implement this function in WakeupSettingScreen
+    }
+
+    virtual void buttonMinDownClicked()
+    {
+        // Override and implement this function in WakeupSettingScreen
+    }
+
+    virtual void buttonDoneClicked()
     {
         // Override and implement this function in WakeupSettingScreen
     }
@@ -48,12 +67,23 @@ protected:
     touchgfx::TextArea textAreaAlarmUse;
     touchgfx::ToggleButton toggleButtonLightUse;
     touchgfx::TextArea textAreaLightUse;
-    touchgfx::ScrollWheel scrollWheelWkaeupMin;
-    touchgfx::DrawableListItems<WakeupHour, 2> scrollWheelWkaeupMinListItems;
-    touchgfx::ScrollWheel scrollWheelWkaeupHour;
-    touchgfx::DrawableListItems<WakeupHour, 2> scrollWheelWkaeupHourListItems;
     touchgfx::TextArea textAreaWakeupAt;
+    touchgfx::TextAreaWithOneWildcard textAreaHour;
+    touchgfx::TextAreaWithOneWildcard textAreaMinute;
+    touchgfx::Button buttonMinDown;
+    touchgfx::Button buttonMinUp;
+    touchgfx::Button buttonHourDown;
+    touchgfx::Button buttonHourUp;
     touchgfx::TextArea textAreaColon;
+    touchgfx::DigitalClock digitalClock;
+
+    /*
+     * Wildcard Buffers
+     */
+    static const uint16_t TEXTAREAHOUR_SIZE = 3;
+    touchgfx::Unicode::UnicodeChar textAreaHourBuffer[TEXTAREAHOUR_SIZE];
+    static const uint16_t TEXTAREAMINUTE_SIZE = 3;
+    touchgfx::Unicode::UnicodeChar textAreaMinuteBuffer[TEXTAREAMINUTE_SIZE];
 
 private:
 
@@ -61,13 +91,11 @@ private:
      * Callback Declarations
      */
     touchgfx::Callback<WakeupSettingScreenViewBase, const touchgfx::AbstractButton&> buttonCallback;
-    touchgfx::Callback<WakeupSettingScreenViewBase, touchgfx::DrawableListItemsInterface*, int16_t, int16_t> updateItemCallback;
 
     /*
      * Callback Handler Declarations
      */
     void buttonCallbackHandler(const touchgfx::AbstractButton& src);
-    void updateItemCallbackHandler(touchgfx::DrawableListItemsInterface* items, int16_t containerIndex, int16_t itemIndex);
 
 };
 

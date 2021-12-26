@@ -15,6 +15,8 @@
 #include <gui/wakeupsettingscreen_screen/WakeupSettingScreenPresenter.hpp>
 #include <gui/sleepstartscreen_screen/SleepStartScreenView.hpp>
 #include <gui/sleepstartscreen_screen/SleepStartScreenPresenter.hpp>
+#include <gui/setclockscreen_screen/SetClockScreenView.hpp>
+#include <gui/setclockscreen_screen/SetClockScreenPresenter.hpp>
 
 using namespace touchgfx;
 
@@ -68,6 +70,17 @@ void FrontendApplicationBase::gotoMainScreenScreenSlideTransitionNorthImpl()
     touchgfx::makeTransition<MainScreenView, MainScreenPresenter, touchgfx::SlideTransition<NORTH>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
+void FrontendApplicationBase::gotoMainScreenScreenSlideTransitionSouth()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoMainScreenScreenSlideTransitionSouthImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoMainScreenScreenSlideTransitionSouthImpl()
+{
+    touchgfx::makeTransition<MainScreenView, MainScreenPresenter, touchgfx::SlideTransition<SOUTH>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
 // WakeupSettingScreen
 
 void FrontendApplicationBase::gotoWakeupSettingScreenScreenSlideTransitionEast()
@@ -92,4 +105,17 @@ void FrontendApplicationBase::gotoSleepStartScreenScreenSlideTransitionSouth()
 void FrontendApplicationBase::gotoSleepStartScreenScreenSlideTransitionSouthImpl()
 {
     touchgfx::makeTransition<SleepStartScreenView, SleepStartScreenPresenter, touchgfx::SlideTransition<SOUTH>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+// SetClockScreen
+
+void FrontendApplicationBase::gotoSetClockScreenScreenSlideTransitionNorth()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoSetClockScreenScreenSlideTransitionNorthImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoSetClockScreenScreenSlideTransitionNorthImpl()
+{
+    touchgfx::makeTransition<SetClockScreenView, SetClockScreenPresenter, touchgfx::SlideTransition<NORTH>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }

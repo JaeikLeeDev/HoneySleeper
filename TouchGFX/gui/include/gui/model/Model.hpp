@@ -18,7 +18,25 @@ public:
     void saveLightIsOn(bool lightIsOn);
     bool getLightIsOn();
     void switchLight(bool turnLightOn);
+    int getCurrentHour();
+    int getCurrentMinute();
+    int getCurrentSecond();
+    void setCurrentTime(int hour, int minute);
+    void updateDigitalClock(int digitalHours, int digitalMinutes, int digitalSeconds);
+    void saveWakeupSetting(int hour, int minute, bool lightUse, bool alarmUse);
+    int getWakeupHour();
+    int getWakeupMinute();
+    bool getWakeupLightUse();
+    bool getWakeupAlarmUse();
 protected:
+    int tickCounter;
+    int digitalHours;
+    int digitalMinutes;
+    int digitalSeconds;
+    int wakeupHour;
+    int wakeupMinute;
+    bool wakeupLightUse;
+    bool wakeupAlarmUse;
     ModelListener* modelListener;
     bool lightIsOn;
 };
