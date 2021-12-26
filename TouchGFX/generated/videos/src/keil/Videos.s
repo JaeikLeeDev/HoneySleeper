@@ -2,9 +2,5 @@
 
 	AREA	ExtFlashSection, DATA, READONLY
 
-	EXPORT	video_wakeup_song_mjpeg_bin_start
-
-video_wakeup_song_mjpeg_bin_start
-	INCBIN	../TouchGFX/generated/videos/bin/wakeup_song_mjpeg.bin
 
 	END
